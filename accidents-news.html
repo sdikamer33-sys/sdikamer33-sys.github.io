@@ -3,47 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قسم الحوادث والأمن - مجلة ابن البلد</title>
+    <title>قسم الحوادث والقضايا - مجلة ابن البلد</title>
     
-    <!-- كود إثبات ملكية Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1225630225681378" crossorigin="anonymous"></script>
-
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23d97706'/><text x='51%' y='62%' dominant-baseline='middle' text-anchor='middle' font-size='50' font-family='Arial, sans-serif' font-weight='bold' fill='%23111827'>عب</text><text x='38%' y='35%' dominant-baseline='middle' text-anchor='middle' font-size='28' font-family='Arial, sans-serif' font-weight='bold' fill='%23111827'>َ</text></svg>">
     
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', Tahoma, sans-serif; }
         body { background-color: #f3f4f6; color: #1f2937; direction: rtl; line-height: 1.8; }
-        
         header { background: #111827; color: #fff; padding: 30px 0; text-align: center; border-bottom: 5px solid #e11d48; }
         header h1 { color: #fbbf24; font-size: 2.5rem; margin-bottom: 5px; }
-        
         nav { background: #1f2937; display: flex; justify-content: center; flex-wrap: wrap; padding: 10px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
         nav a { color: #f3f4f6; text-decoration: none; padding: 8px 16px; margin: 3px; font-size: 1rem; border-radius: 6px; font-weight: 600; transition: 0.3s; }
         nav a:hover { background: #e11d48; color: #fff; }
-
         .container { max-width: 1000px; margin: 40px auto; padding: 0 15px; }
-        
-        /* صندوق القسم الرئيسي */
         .section-header { background: #111827; color: #fbbf24; padding: 15px 20px; border-radius: 8px 8px 0 0; font-size: 1.5rem; border-right: 6px solid #e11d48; }
-        
         .news-list-box { background: #fff; padding: 25px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 40px; }
-
-        /* تصميم الخبر الفردي داخل القائمة */
         .news-item { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid #e5e7eb; align-items: center; }
         .news-item:last-child { border-bottom: none; }
         @media (max-width: 768px) { .news-item { flex-direction: column; align-items: flex-start; } }
-
         .news-item img { width: 220px; height: 140px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
         @media (max-width: 768px) { .news-item img { width: 100%; height: 200px; } }
-
         .news-content h3 { font-size: 1.25rem; color: #111827; margin-bottom: 8px; line-height: 1.4; }
-        .news-content h3 a { color: inherit; text-decoration: none; transition: 0.2s; }
+        .news-content h3 a { color: inherit; text-decoration: none; transition: 0.2s; cursor: pointer; }
         .news-content h3 a:hover { color: #e11d48; }
+        .news-content h4.sub-title { font-size: 0.95rem; color: #d97706; margin-bottom: 6px; font-weight: 600; }
         .news-content p { color: #4b5563; font-size: 1rem; margin-bottom: 10px; }
         .news-date { font-size: 0.85rem; color: #9ca3af; }
-
         .back-btn { display: inline-block; background: #111827; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: 0.3s; }
-        .back-btn:hover { background: #e11d48; }
+        .back-api:hover { background: #e11d48; }
+
+        /* ستايل النافذة المنسقة (Modal) لقراءة المقال كامل */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; justify-content: center; align-items: center; padding: 20px; }
+        .modal-box { background: #fff; max-width: 700px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 30px; border-radius: 12px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        .modal-close { position: absolute; top: 15px; left: 20px; background: #e11d48; color: #fff; border: none; width: 35px; height: 35px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; font-weight: bold; display: flex; align-items: center; justify-content: center; }
+        .modal-title { color: #111827; font-size: 1.5rem; margin-bottom: 10px; }
+        .modal-subtitle { color: #d97706; font-size: 1.1rem; margin-bottom: 20px; font-weight: bold; }
+        .modal-body { color: #374151; font-size: 1.05rem; line-height: 2; }
 
         footer { background: #111827; color: #9ca3af; text-align: center; padding: 25px 0; margin-top: 40px; border-top: 5px solid #fbbf24; }
         .footer-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; }
@@ -51,12 +47,10 @@
     </style>
 </head>
 <body>
-
     <header>
         <h1>مجلة ابن البلد</h1>
         <p>نبض الشارع المصري والعربي</p>
     </header>
-
     <nav>
         <a href="index.html">الرئيسية</a>
         <a href="gold-news.html">اقتصاد وذهب</a>
@@ -66,45 +60,135 @@
         <a href="about.html">من نحن</a>
         <a href="contact.html">اتصل بنا</a>
     </nav>
-
+    
     <div class="container">
-        <div class="section-header">📁 تغطية خاصة: قسم الحوادث والأمن</div>
+        <div class="section-header">🚨 أرشيف القضايا والحوادث والتحقيقات الأمنية</div>
         <div class="news-list-box">
-
-            <!-- الخبر الأول (أحدث خبر) -->
+            
+            <!-- الخبر الأول -->
             <div class="news-item">
-                <img src="https://images.pexels.com/photos/7988081/pexels-photo-7988081.jpeg?auto=compress&cs=tinysrgb&w=800" alt="حوادث">
+                <img src="https://images.pexels.com/photos/1618606/pexels-photo-1618606.jpeg?auto=compress&cs=tinysrgb&w=800" alt="شرطة">
                 <div class="news-content">
-                    <h3><a href="#">قبضة أمنية حاسمة تسقط شبكات الإتجار بالمواد المخدرة بعدة محافظات</a></h3>
-                    <p>وجه قطاع الأمن العام حملات مكبرة أسفرت عن ضبط تشكيلات عصابية وبؤر إجرامية تخصصت في جلب وترويج المخدرات والأسلحة النارية...</p>
-                    <span class="news-date">منذ ساعتين | قسم الحوادث</span>
+                    <h3><a onclick="openModal('1. سقوط تشكيل عصابي لسرقة وتهبيط الشقق السكنية في المحافظات', 'أمن المباحث ينجح في استعادة أموال ومجوهرات مسروقة بقيمة ملايين الجنيهات.', 'تمكن قطاع الأمن العام بمديرية الأمن، بالتنسيق مع أجهزة البحث الجنائي، من ضبط عناصر تشكيل عصابي تخصص في ارتكاب جرائم سرقة الشقق السكنية بأسلوب إبرة المفتاح والكسر. وتبين من التحريات ارتكابهم عدة وقائع بنطاق المحافظات، وتم إرشاد المتهمين عن كافة المسروقات وتولت النيابة التحقيق.')">1. سقوط تشكيل عصابي لسرقة وتهبيط الشقق السكنية في المحافظات</a></h3>
+                    <h4 class="sub-title">أمن المباحث ينجح في استعادة أموال ومجوهرات مسروقة بقيمة ملايين الجنيهات.</h4>
+                    <p>تمكن قطاع الأمن العام بمديرية الأمن، بالتنسيق مع أجهزة البحث الجنائي، من ضبط عناصر تشكيل عصابي تخصص في ارتكاب جرائم سرقة الشقق السكنية...</p>
+                    <span class="news-date">منذ ساعة | قسم الحوادث</span>
                 </div>
             </div>
 
-            <!-- الخبر الثاني (لو حبيت تضيف خبر جديد، انسخ الكوبيه دي وحطها تحت دي) -->
+            <!-- الخبر الثاني -->
             <div class="news-item">
-                <img src="https://images.pexels.com/photos/4709824/pexels-photo-4709824.jpeg?auto=compress&cs=tinysrgb&w=800" alt="أمن">
+                <img src="https://images.pexels.com/photos/159299/traffic-accident-crash-car-damage-159299.jpeg?auto=compress&cs=tinysrgb&w=800" alt="حادث مروري">
                 <div class="news-content">
-                    <h3><a href="#">السيطرة على حريق محدود داخل مخزن تجاري دون خسائر بشرية</a></h3>
-                    <p>تمكنت قوات الحماية المدنية من اخحام حريق نشب داخل مخزن بشارع الرئيسي، وتم إتمام عمليات التبريد بنجاح دون تسجيل أي إصابات...</p>
-                    <span class="news-date">منذ 5 ساعات | قسم الحوادث</span>
+                    <h3><a onclick="openModal('2. تفاصيل حادث مروع على الطريق الزراعي وارتفاع عدد المصابين', 'السرعة الزائدة وعدم الالتزام بالتعليمات المرورية وراء انقلاب ميكروباص.', 'شهد الطريق الزراعي السريع حادث تصادم مروع أدى لانقلاب سيارة ميكروباص، مما أسفر عن إصابة عدد من المواطنين بكدمات وسجحات متفرقة بالجسم. انتقلت على الفور سيارات الإسعاف والأجهزة الأمنية إلى محل الواقعة وتم نقل المصابين لأقرب مستشفى لتلقي العلاج اللازم، وإعادة تسيير الحركة المرورية.')">2. تفاصيل حادث مروع على الطريق الزراعي وارتفاع عدد المصابين</a></h3>
+                    <h4 class="sub-title">السرعة الزائدة وعدم الالتزام بالتعليمات المرورية وراء انقلاب ميكروباص.</h4>
+                    <p>شهد الطريق الزراعي السريع حادث تصادم مروع أدى لانقلاب سيارة ميكروباص، مما أسفر عن إصابة عدد من المواطنين بكدمات وسجحات متفرقة...</p>
+                    <span class="news-date">منذ ساعتين | قسم الحوادث</span>
                 </div>
             </div>
 
             <!-- الخبر الثالث -->
             <div class="news-item">
-                <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=800" alt="مرور">
+                <img src="https://images.pexels.com/photos/4386445/pexels-photo-4386445.jpeg?auto=compress&cs=tinysrgb&w=800" alt="مخدرات">
                 <div class="news-content">
-                    <h3><a href="#">الإدارة العامة للمرور تشن حملات لضبط المسرعين على الطرق السريعة</a></h3>
-                    <p>كثفت الإدارة تواجدها الراداري والحملات الأمنية لضبط المخالفات المرورية وحماية ارواح المواطنين على المحاور الرئيسية...</p>
-                    <span class="news-date">امس | قسم الحوادث</span>
+                    <h3><a onclick="openModal('3. ضربة أمنية استباقية: إحباط تهريب شحنة مخدرات كبرى قبل ترويجها', 'الأمن يحبط مخططاً إجرامياً لعصابة دولية تتاجر في المواد المخدرة.', 'في إطار جهود أجهزة وزارة الداخلية لمكافحة الجريمة بشتى صورها، لا سيما جرائم الاتجار في المواد المخدرة، رصدت الإدارة العامة لمكافحة المخدرات نشاط عنصرين إجراميين، وبحوزتهما كميات كبيرة من المواد المخدرة المعدة للترويج على الشاب، وتم اتخاذ الإجراءات القانونية اللازمة.')">3. ضربة أمنية استباقية: إحباط تهريب شحنة مخدرات كبرى قبل ترويجها</a></h3>
+                    <h4 class="sub-title">الأمن يحبط مخططاً إجرامياً لعصابة دولية تتاجر في المواد المخدرة.</h4>
+                    <p>في إطار جهود أجهزة وزارة الداخلية لمكافحة الجريمة بشتى صورها، رصدت الإدارة العامة لمكافحة المخدرات نشاط عنصرين إجراميين بحوزتهما كميات ضخمة...</p>
+                    <span class="news-date">منذ 3 ساعات | قسم الحوادث</span>
                 </div>
             </div>
 
+            <!-- الخبر الرابع -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=800" alt="نصب إلكتروني">
+                <div class="news-content">
+                    <h3><a onclick="openModal('4. القبض على مهندس برمجيات بتهمة النصب الإلكتروني واستغلال حسابات المواطنين', 'الاستيلاء على مبالغ مالية ضخمة عبر إعلانات وهمية على منصات التواصل.', 'تمكن مباحث مكافحة جرائم الحاسبات وتكنولوجيا المعلومات من ضبط شخص بتهمة إنشاء صفحات وهمية على مواقع التواصل الاجتماعي للنصب على المواطنين بزعم توفير فرص عمل وتسهيلات بنكية وهمية، وبحوزته أجهزة حاسب الآلي تستخدم في الجريمة.')">4. القبض على مهندس برمجيات بتهمة النصب الإلكتروني واستغلال حسابات المواطنين</a></h3>
+                    <h4 class="sub-title">الاستيلاء على مبالغ مالية ضخمة عبر إعلانات وهمية على منصات التواصل.</h4>
+                    <p>تمكن مباحث مكافحة جرائم الحاسبات وتكنولوجيا المعلومات من ضبط شخص بتهمة إنشاء صفحات وهمية على مواقع التواصل الاجتماعي للنصب على المواطنين...</p>
+                    <span class="news-date">منذ 4 ساعات | قسم الحوادث</span>
+                </div>
+            </div>
+
+            <!-- الخبر الخامس -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/1089855/pexels-photo-1089855.jpeg?auto=compress&cs=tinysrgb&w=800" alt="حريق">
+                <div class="news-content">
+                    <h3><a onclick="openModal('5. السيطرة على حريق هائل نشب داخل مخزن تجاري دون خسائر في الأرواح', 'قوات الحماية المدنية تدفع بسيارات الإطفاء لمنع امتداد النيران للمناطق المجاورة.', 'نجحت قوات الحماية المدنية في السيطرة على حريق هائل نشب داخل مخزن بضائع بمنطقة تجارية، بعد الدفع بأكثر من سيارة إطفاء وفرض كاردون أمني بمحيط الموقع. وبدأت المعمل الجنائي معاينة الحсب لمعرفة أسباب اندلاع النيران.')">5. السيطرة على حريق هائل نشب داخل مخزن تجاري دون خسائر في الأرواح</a></h3>
+                    <h4 class="sub-title">قوات الحماية المدنية تدفع بسيارات الإطفاء لمنع امتداد النيران للمناطق المجاورة.</h4>
+                    <p>نجحت قوات الحماية المدنية في السيطرة على حريق هائل نشب داخل مخزن بضائع بمنطقة تجارية، بعد الدفع بعدة سيارات إطفاء وفرض كردون أمني بمحيط الموقع...</p>
+                    <span class="news-date">منذ 5 ساعات | قسم الحوادث</span>
+                </div>
+            </div>
+
+            <!-- الخبر السادس -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/5668473/pexels-photo-5668473.jpeg?auto=compress&cs=tinysrgb&w=800" alt="غش تجاري">
+                <div class="news-content">
+                    <h3><a onclick="openModal('6. ضبط مصنع عشوائي لإنتاج وتعبئة الأغذية الفاسدة من منتهية الصلاحية', 'التموين بالتعاون مع مباحث التפס ضبط أطنان من السلع المغشوشة قبل طرحها بالأسواق.', 'شنت مباحث التموين حملة مكبرة أسفرت عن ضبط صاحب مصنع غير مرخص لإنتاج السلع الغذائية باستخدام مستلزمات مجهولة المصدر ومنتهية الصلاحية، بقصد الغش والتدليس على المستهلكين لتحقيق أرباح غير مشروعة، وتم التحفظ على المضبوطات.')">6. ضبط مصنع عشوائي لإنتاج وتعبئة الأغذية الفاسدة من منتهية الصلاحية</a></h3>
+                    <h4 class="sub-title">التموين بالتعاون مع مباحث التموين ضبط أطنان من السلع المغشوشة قبل طرحها بالأسواق.</h4>
+                    <p>شنت مباحث التموين حملة مكبرة أسفرت عن ضبط صاحب مصنع غير مرخص لإنتاج السلع الغذائية باستخدام مستلزمات مجهولة المصدر ومنتهية الصلاحية...</p>
+                    <span class="news-date">منذ 6 ساعات | قسم الحوادث</span>
+                </div>
+            </div>
+
+            <!-- الخبر السابع -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/6077443/pexels-photo-6077443.jpeg?auto=compress&cs=tinysrgb&w=800" alt="ابتزاز إلكتروني">
+                <div class="news-content">
+                    <h3><a onclick="openModal('7. تفاصيل سقوط "حوت ابتزاز الفتيات" في قبضة مباحث الانترنت', 'ابتز ضحاياه بصور شخصية فأنقذته أجهزة الأمن وأحيل للنيابة العامة.', 'تمكنت الأجهزة الأمنية من ضبط شاب قام بابتزاز فتاة وتهديدها بنشر صور خاصة لها عبر السوشيال ميديا مقابل مبالغ مالية. وبعد بلاغ تقدمت به الضحية، تم تحديد موقع المتهم وضبطه وبحوزته الهاتف المستخدم في ارتكاب الواقعة.')">7. تفاصيل سقوط "حوت ابتزاز الفتيات" في قبضة مباحث الانترنت</a></h3>
+                    <h4 class="sub-title">ابتز ضحاياه بصور شخصية فأنقذته أجهزة الأمن وأحيل للنيابة العامة.</h4>
+                    <p>تمكنت الأجهزة الأمنية من ضبط شاب قام بابتزاز فتاة وتهديدها بنشر صور خاصة لها عبر السوشيال ميديا مقابل مبالغ مالية، وتم تحديد مكانه وضبطه...</p>
+                    <span class="news-date">منذ 7 ساعات | قسم الحوادث</span>
+                </div>
+            </div>
+
+            <!-- الخبر الثامن -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800" alt="أمن الجيزة">
+                <div class="news-content">
+                    <h3><a onclick="openModal('8. كشف غموض العثور على جثة شخص طافية في إحدى الترع', 'التحريات الأولية تؤكد عدم وجود شبهة جنائية وتكشف هوية المتوفي.', 'تكثف مباحث مركز الشرطة جهودها لكشف ملابسات العثور على جثة شخص في مياه ترعة رئيسية، وتم نقل الجثة إلى مشرحة المستشفى تحتand تصرف النيابة العامة التي أمرت بالاستعلام عن هويته وتشريح الجثة لبيان السبب الحقيقي للوفاة.')">8. كشف غموض العثور على جثة شخص طافية في إحدى الترع</a></h3>
+                    <h4 class="sub-title">التحريات الأولية تؤكد عدم وجود شبهة جنائية وتكشف هوية المتوفي.</h4>
+                    <p>تكثف مباحث مركز الشرطة جهودها لكشف ملابسات العثور على جثة شخص في مياه ترعة رئيسية، وتم نقل الجثة إلى مشرحة المستشفى تحت تصرف النيابة العامة...</p>
+                    <span class="news-date">منذ 8 ساعات | قسم الحوادث</span>
+                </div>
+            </div>
+
+            <!-- الخبر التاسع -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/4506267/pexels-photo-4506267.jpeg?auto=compress&cs=tinysrgb&w=800" alt="تنفيذ أحكام">
+                <div class="news-content">
+                    <h3><a onclick="openModal('9. قطاع الأمن العام يشن حملة مكبرة لضبط الهاربين وتنفيذ الأحكام القضائية', 'ضبط مئات المحكوم عليهم في قضايا جنائية ومدنية بجميع المحافظات.', 'شن قطاع الأمن العام بمشاركة مديريات الأمن حملة أمنية مكبرة لملاحقة وضبط المحكوم عليهم الهاربين، وأسفرت الجهود عن تنفيذ آلاف الأحكام القضائية المتنوعة شملت جنايات وحبس غرامات، وتم اتخاذ الإجراءات القانونية.')">9. قطاع الأمن العام يشن حملة مكبرة لضبط الهاربين وتنفيذ الأحكام القضائية</a></h3>
+                    <h4 class="sub-title">ضبط مئات المحكوم عليهم في قضايا جنائية ومدنية بجميع المحافظات.</h4>
+                    <p>شن قطاع الأمن العام بمشاركة مديريات الأمن حملة أمنية مكبرة لملاحقة وضبط المحكوم عليهم الهاربين، وأسفرت الجهود عن تنفيذ آلاف الأحكام القضائية...</p>
+                    <span class="news-date">منذ 9 ساعات | قسم الحوادث</span>
+                </div>
+            </div>
+
+            <!-- الخبر العاشر -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=800" alt="نقود مزيفة">
+                <div class="news-content">
+                    <h3><a onclick="openModal('10. سقوط تشكيل عصابي لترويج العملات النقدية المزيفة في الأسواق الشعبية', 'ضبط مبالغ مالية مقلدة بحوزة عاطلين بصدد ترويجها في مواسم الشراء.', 'تمكنت الأجهزة الأمنية من ضبط شخصين لقيامهما بتشكيل عصابي لترويج العملات الوطنية والأجنبية المقلدة، مستغلين زحام الأسواق الشعبية لتصريفها. وبحوزتهما مبالغ مزيفة مطبوعة باحترافية، وتم تحرير محضر بالواقعة.')">10. سقوط تشكيل عصابي لترويج العملات النقدية المزيفة في الأسواق الشعبية</a></h3>
+                    <h4 class="sub-title">ضبط مبالغ مالية مقلدة بحوزة عاطلين بصدد ترويجها في مواسم الشراء.</h4>
+                    <p>تمكنت الأجهزة الأمنية من ضبط شخصين لقيامهما بتشكيل عصابي لترويج العملات الوطنية والأجنبية المقلدة، مستغلين زحام الأسواق الشعبية لتصريفها...</p>
+                    <span class="news-date">منذ 10 ساعات | قسم الحوادث</span>
+                </div>
+            </div>
+
+            <!-- أزرار إضافية أو العودة -->
             <div style="text-align: center; margin-top: 30px;">
                 <a href="index.html" class="back-btn">← العودة إلى الصفحة الرئيسية</a>
             </div>
+        </div>
+    </div>
 
+    <!-- نافذة عرض المقال الكامل (Modal) -->
+    <div id="articleModal" class="modal-overlay" onclick="closeModalOutside(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <h2 id="modalTitle" class="modal-title"></h2>
+            <h4 id="modalSubtitle" class="modal-subtitle"></h4>
+            <div id="modalBody" class="modal-body"></div>
         </div>
     </div>
 
@@ -117,5 +201,21 @@
         <p>جميع الحقوق محفوظة لـ © مجلة ابن البلد 2026</p>
     </footer>
 
+    <script>
+        function openModal(title, subtitle, body) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalSubtitle').innerText = subtitle;
+            document.getElementById('modalBody').innerText = body;
+            document.getElementById('articleModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('articleModal').style.display = 'none';
+        }
+        function closeModalOutside(event) {
+            if (event.target === document.getElementById('articleModal')) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
