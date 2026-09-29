@@ -3,95 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>انطلاق فعاليات فنية وثقافية تحتفي بالتراث والعراقة المصرية - مجلة ابن البلد</title>
+    <title>قسم المنوعات والثقافة - مجلة ابن البلد</title>
     
-    <!-- نفس أيقونة المتصفح المعتمدة -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1225630225681378" crossorigin="anonymous"></script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23d97706'/><text x='51%' y='62%' dominant-baseline='middle' text-anchor='middle' font-size='50' font-family='Arial, sans-serif' font-weight='bold' fill='%23111827'>عب</text><text x='38%' y='35%' dominant-baseline='middle' text-anchor='middle' font-size='28' font-family='Arial, sans-serif' font-weight='bold' fill='%23111827'>َ</text></svg>">
-
+    
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', Tahoma, sans-serif; }
-        body { background-color: #f3f4f6; color: #1f2937; direction: rtl; }
-        
-        header { background: #111827; color: #fff; padding: 25px 0; text-align: center; border-bottom: 5px solid #e11d48; }
-        
-        .site-logo {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #fbbf24, #d97706);
-            border-radius: 50%;
-            margin: 0 auto 10px auto;
-            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
-            border: 2px solid #fff;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .site-logo .logo-text { font-size: 1.8rem; font-weight: 900; color: #111827; font-family: Arial, sans-serif; position: relative; top: 1px; }
-        .site-logo .logo-haraka { position: absolute; top: 10px; right: 19px; font-size: 1rem; font-weight: 900; color: #111827; font-family: Arial, sans-serif; }
-
-        header h2 { font-size: 1.5rem; color: #fbbf24; }
-
-        .article-container { max-width: 800px; margin: 40px auto; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        
-        .article-category { background: #e11d48; color: #fff; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; display: inline-block; margin-bottom: 15px; font-weight: bold; }
-        
-        .article-title { font-size: 2.2rem; color: #111827; margin-bottom: 15px; line-height: 1.4; font-weight: 800; }
-        
-        .article-meta { font-size: 0.9rem; color: #9ca3af; margin-bottom: 25px; border-bottom: 1px solid #e5e7eb; padding-bottom: 15px; display: flex; gap: 20px; }
-        
-        .article-image { width: 100%; height: 350px; object-fit: cover; border-radius: 10px; margin-bottom: 25px; }
-        
-        .article-content p { font-size: 1.1rem; color: #374151; line-height: 1.8; margin-bottom: 20px; }
-        
-        .article-content h3 { font-size: 1.4rem; color: #111827; margin: 30px 0 15px 0; border-right: 4px solid #d97706; padding-right: 10px; }
-
-        .back-btn { display: inline-block; margin-top: 30px; background: #1f2937; color: #fff; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: 0.3s; }
+        body { background-color: #f3f4f6; color: #1f2937; direction: rtl; line-height: 1.8; }
+        header { background: #111827; color: #fff; padding: 30px 0; text-align: center; border-bottom: 5px solid #e11d48; }
+        header h1 { color: #fbbf24; font-size: 2.5rem; margin-bottom: 5px; }
+        nav { background: #1f2937; display: flex; justify-content: center; flex-wrap: wrap; padding: 10px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+        nav a { color: #f3f4f6; text-decoration: none; padding: 8px 16px; margin: 3px; font-size: 1rem; border-radius: 6px; font-weight: 600; transition: 0.3s; }
+        nav a:hover { background: #e11d48; color: #fff; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 15px; }
+        .section-header { background: #111827; color: #fbbf24; padding: 15px 20px; border-radius: 8px 8px 0 0; font-size: 1.5rem; border-right: 6px solid #e11d48; }
+        .news-list-box { background: #fff; padding: 25px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 40px; }
+        .news-item { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid #e5e7eb; align-items: center; }
+        .news-item:last-child { border-bottom: none; }
+        @media (max-width: 768px) { .news-item { flex-direction: column; align-items: flex-start; } }
+        .news-item img { width: 220px; height: 140px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
+        @media (max-width: 768px) { .news-item img { width: 100%; height: 200px; } }
+        .news-content h3 { font-size: 1.25rem; color: #111827; margin-bottom: 8px; line-height: 1.4; }
+        .news-content h3 a { color: inherit; text-decoration: none; transition: 0.2s; }
+        .news-content h3 a:hover { color: #e11d48; }
+        .news-content p { color: #4b5563; font-size: 1rem; margin-bottom: 10px; }
+        .news-date { font-size: 0.85rem; color: #9ca3af; }
+        .back-btn { display: inline-block; background: #111827; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: 0.3s; }
         .back-btn:hover { background: #e11d48; }
-
-        footer { background: #111827; color: #9ca3af; text-align: center; padding: 25px 0; margin-top: 40px; font-size: 0.9rem; border-top: 4px solid #fbbf24; }
+        footer { background: #111827; color: #9ca3af; text-align: center; padding: 25px 0; margin-top: 40px; border-top: 5px solid #fbbf24; }
+        .footer-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; }
+        .footer-links a { color: #fbbf24; text-decoration: none; }
     </style>
 </head>
 <body>
-
     <header>
-        <a href="index.html" style="text-decoration: none;">
-            <div class="site-logo">
-                <span class="logo-text">عب</span>
-                <span class="logo-haraka">َ</span>
-            </div>
-        </a>
-        <h2>مجلة ابن البلد</h2>
+        <h1>مجلة ابن البلد</h1>
+        <p>نبض الشارع المصري والعربي</p>
     </header>
-
-    <div class="article-container">
-        <span class="article-category">منوعات وثقافة</span>
-        <h1 class="article-title">انطلاق فعاليات فنية وثقافية تحتفي بالتراث والعراقة المصرية</h1>
-        
-        <div class="article-meta">
-            <span>📅 التاريخ: 29 سبتمبر 2026</span>
-            <span>✍️ تحرير: قسم الثقافة</span>
+    <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="gold-news.html">اقتصاد وذهب</a>
+        <a href="sports-news.html">رياضة</a>
+        <a href="accidents-news.html">حوادث</a>
+        <a href="culture-news.html">منوعات</a>
+        <a href="about.html">من نحن</a>
+        <a href="contact.html">اتصل بنا</a>
+    </nav>
+    <div class="container">
+        <div class="section-header">📁 تغطية خاصة: قسم المنوعات والثقافة</div>
+        <div class="news-list-box">
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=800" alt="ثقافة">
+                <div class="news-content">
+                    <h3><a href="#">انطلاق فعاليات فنية وثقافية تحتفي بالتراث والعراقة المصرية</a></h3>
+                    <p>إقبال واسع وعروض متميزة تستعرض الفنون الشعبية وتكرم رموز الإبداع في المحافظات المختلفة...</p>
+                    <span class="news-date">منذ 3 ساعات | قسم المنوعات</span>
+                </div>
+            </div>
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800" alt="معارض">
+                <div class="news-content">
+                    <h3><a href="#">إقبال كبير على المعارض الثقافية والروائع الأدبية بمختلف المحافظات</a></h3>
+                    <p>تشهد الفعاليات الثقافية حضوراً واسعاً من مختلف الفئات لحضور الندوات ومعارض الإصدارات الجديدة...</p>
+                    <span class="news-date">منذ أمس | قسم المنوعات</span>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="index.html" class="back-btn">← العودة إلى الصفحة الرئيسية</a>
+            </div>
         </div>
-
-        <img src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80" alt="ثقافة وفنون" class="article-image">
-
-        <div class="article-content">
-            <p>شهدت المراكز الثقافية وقصور الثقافة بالمحافظات المختلفة انطلاق سلسلة من الفعاليات الفنية والعروض التراثية التي تسلط الضوء على عمق الهوية المصرية وتنوع موروثها الشعبي والثقافي العريق.</p>
-            
-            <p>وتتضمن الفعاليات معارض للحرف اليدوية والتراثية، وعروضاً لفرق الفنون الشعبية والموسيقى العربية، إلى جانب الندوات الشعرية والأدبية التي تستضيف نخبة من المبدعين والمثقفين لتعزيز التواصل الثقافي بين الأجيال.</p>
-
-            <h3>جسور التواصل وإحياء التراث</h3>
-            <p>تأتي هذه الأنشطة في إطار خطة وزارة الثقافة لدعم القرى والمحافظات ونشر البهجة والفنون الراقيّة، وسط إقبال جماهيري غفير من مختلف الفئات العمرية التي حرصت على متابعة الفعاليات والتفاعل معها.</p>
-
-            <p>ومن المقرر أن تستمر الفعاليات طوال الأسبوع الحالي، مع تقديم عروض خاصة للأطفال والشباب لتشجيعهم على الانخراط في الأنشطة الثقافية والفنية المختلفة.</p>
-        </div>
-
-        <a href="index.html" class="back-btn">← العودة إلى الصفحة الرئيسية</a>
     </div>
-
     <footer>
+        <div class="footer-links">
+            <a href="index.html">الرئيسية</a>
+            <a href="about.html">من نحن</a>
+            <a href="contact.html">اتصل بنا</a>
+        </div>
         <p>جميع الحقوق محفوظة لـ © مجلة ابن البلد 2026</p>
     </footer>
-
 </body>
 </html>
