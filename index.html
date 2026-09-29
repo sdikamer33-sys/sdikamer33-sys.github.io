@@ -3,115 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مجلة ابن البلد - نبض الشارع المصري والعربي</title>
+    <title>مجلة ابن البلد - الشارع المصري لحظة بلحظة</title>
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', Tahoma, sans-serif; }
-        body { background-color: #f4f4f4; color: #333; direction: rtl; }
-        header { background: #1a1a1a; color: #fff; padding: 15px 0; text-align: center; border-bottom: 4px solid #d9534f; }
-        header h1 { font-size: 2.5rem; color: #ffcc00; margin-bottom: 5px; }
-        header p { font-size: 1rem; color: #ccc; }
+        body { background-color: #f7f7f7; color: #222; direction: rtl; }
         
+        /* الهيدر وشعار المجلة */
+        header { background: #111; color: #fff; padding: 20px 0; text-align: center; border-bottom: 5px solid #d9534f; }
+        header h1 { font-size: 2.8rem; color: #ffcc00; margin-bottom: 5px; font-weight: bold; }
+        header p { font-size: 1.1rem; color: #ddd; }
+
         /* شريط التنقل */
-        nav { background: #2c2c2c; display: flex; justify-content: center; flex-wrap: wrap; padding: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        nav a { color: #fff; text-decoration: none; padding: 8px 15px; margin: 2px; font-size: 0.95rem; transition: 0.3s; border-radius: 4px; }
+        nav { background: #222; display: flex; justify-content: center; flex-wrap: wrap; padding: 12px; box-shadow: 0 3px 6px rgba(0,0,0,0.3); position: sticky; top: 0; z-index: 1000; }
+        nav a { color: #fff; text-decoration: none; padding: 8px 16px; margin: 3px; font-size: 1rem; transition: 0.3s; border-radius: 4px; font-weight: 600; }
         nav a:hover { background: #d9534f; color: #fff; }
 
-        /* هيكل الموقع */
-        .container { max-width: 1200px; margin: 20px auto; padding: 0 15px; display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+        /* التخطيط العام للموقع */
+        .container { max-width: 1200px; margin: 25px auto; padding: 0 15px; display: grid; grid-template-columns: 2fr 1fr; gap: 25px; }
         @media (max-width: 768px) { .container { grid-template-columns: 1fr; } }
 
-        /* الأخبار الرئيسية */
-        .main-news { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .main-news h2 { border-right: 4px solid #d9534f; padding-right: 10px; margin-bottom: 15px; font-size: 1.4rem; color: #222; }
-        .news-card { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
-        .news-card h3 { font-size: 1.2rem; margin-bottom: 8px; color: #004080; }
-        .news-card p { font-size: 0.95rem; color: #555; line-height: 1.6; }
+        /* الأقسام والأخبار الرئيسية */
+        .section-box { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .section-box h2 { border-right: 5px solid #d9534f; padding-right: 12px; margin-bottom: 20px; font-size: 1.5rem; color: #111; }
+        
+        .news-item { margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+        .news-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .news-item h3 { font-size: 1.25rem; margin-bottom: 8px; color: #004080; }
+        .news-item h3:hover { color: #d9534f; cursor: pointer; }
+        .news-item p { font-size: 1rem; color: #555; line-height: 1.7; }
+        .news-meta { font-size: 0.85rem; color: #888; margin-top: 5px; display: block; }
 
         /* الشريط الجانبي */
-        .sidebar { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .sidebar h3 { border-right: 4px solid #ffcc00; padding-right: 10px; margin-bottom: 15px; font-size: 1.2rem; color: #222; }
-        .side-item { margin-bottom: 15px; font-size: 0.9rem; border-bottom: 1px dashed #ddd; padding-bottom: 10px; }
-        .side-item span { display: block; color: #d9534f; font-weight: bold; margin-bottom: 3px; }
+        .sidebar-box { background: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 25px; }
+        .sidebar-box h3 { border-right: 5px solid #ffcc00; padding-right: 12px; margin-bottom: 15px; font-size: 1.3rem; color: #111; }
+        .side-link { display: block; padding: 10px 0; border-bottom: 1px dashed #ddd; color: #333; text-decoration: none; font-size: 0.95rem; transition: 0.2s; }
+        .side-link:hover { color: #d9534f; padding-right: 5px; }
+
+        /* أسعار الذهب والعملات */
+        .gold-box { background: #fffde7; border: 1px solid #ffe082; padding: 15px; border-radius: 6px; margin-bottom: 15px; }
+        .gold-box h4 { color: #f57c00; margin-bottom: 8px; font-size: 1.1rem; }
+        .gold-box p { font-size: 0.95rem; color: #444; line-height: 1.6; }
 
         /* الفوتر */
-        footer { background: #1a1a1a; color: #aaa; text-align: center; padding: 20px 0; margin-top: 40px; font-size: 0.9rem; }
+        footer { background: #111; color: #aaa; text-align: center; padding: 25px 0; margin-top: 40px; font-size: 0.95rem; border-top: 4px solid #ffcc00; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>مجلة ابن البلد</h1>
-        <p>نبض الشارع المصري.. أخبار رياضية، اقتصادية، وعالمية لحظة بلحظة</p>
+        <p>الصحافة الحرة بنبض الشارع المصري والعربي - تغطية شاملة على مدار الساعة</p>
     </header>
 
     <nav>
         <a href="#">الرئيسية</a>
-        <a href="#">أهم الاخبار</a>
+        <a href="#">أهم الأخبار</a>
         <a href="#">أخبار البلد</a>
         <a href="#">حوادث</a>
         <a href="#">رياضة</a>
-        <a href="#">فن وثقافة</a>
+        <a href="#">اقتصاد وذهب</a>
         <a href="#">توك شو</a>
-        <a href="#">مرأة ومنوعات</a>
-        <a href="#">ديني</a>
-        <a href="#">أخبار العالم</a>
-        <a href="#">أصل الحكاية</a>
+        <a href="#">عرب وعالم</a>
+        <a href="#">منوعات وثقافة</a>
     </nav>
 
     <div class="container">
-        <!-- القسم الرئيسي للأخبار -->
-        <div class="main-news">
-            <h2>أبرز الأحداث والتريندات</h2>
-            
-            <div class="news-card">
-                <h3>منتخب مصر يواجه منتخب جنوب السودان في تصفيات أمم إفريقيا</h3>
-                <p>يستعد منتخب مصر الأول لكرة القدم لخوض مباراته الثانية الهامة في التصفيات المؤهلة إلى كأس الأمم الإفريقية 2027، حيث يحل ضيفاً على منتخب جنوب السودان عصر الثلاثاء 29 سبتمبر، وسط ترقب جماهير كبير لدعم الفراعنة في مشوار التصفيات.</p>
+        <!-- المحتوى الرئيسي والأخبار الكبرى -->
+        <div>
+            <div class="section-box">
+                <h2>أبرز أحداث الأسبوع والشارع المصري</h2>
+                
+                <div class="news-item">
+                    <h3>منتخب مصر يكثف استعداداته لمواجهة جنوب السودان في تصفيات إفريقيا</h3>
+                    <p>يخوض منتخب مصر الأول لكرة القدم تدريباته الأخيرة استعداداً للمواجهة المرتقبة أمام منتخب جنوب السودان، ضمن منافسات الجولة الثانية من التصفيات المؤهلة لكأس أمم إفريقيا 2027، وسط تركيز الجهاز الفني على حصد النقاط الثلاث وتعزيز الصدارة.</p>
+                    <span class="news-meta">منذ ساعتين | قسم الرياضة</span>
+                </div>
+
+                <div class="news-item">
+                    <h3>قرارات عاجلة لضبط الأسواق وتأمين السلع الأساسية للمواطنين</h3>
+                    <p>شهدت الجهات الحكومية والتموينية خلال الأيام الماضية تحركات واسعة لمراقبة الأسواق والمخابز، وتأكيد استقرار أسعار السلع الاستراتيجية، مع إطلاق حملات مكثفة لمنع أي استغلال وضمان توفير احتياجات المواطنين بأسعار عادلة.</p>
+                    <span class="news-meta">منذ 4 ساعات | أحدث أخبار البلد</span>
+                </div>
+
+                <div class="news-item">
+                    <h3>محاكمات وحوادث الأسبوع: استكمال قضايا الرأي العام وردود قضائية حاسمة</h3>
+                    <p>واصل القضاء المصري نظر عدد من قضايا الرأي العام وحوادث الأسبوع الماضي، وسط تشديدات أمنية وتغطية إعلامية مكثفة لمتابعة الأحكام الصادرة التي ترسيخ مبادئ سيادة القانون وحماية أمن المجتمع.</p>
+                    <span class="news-meta">منذ أمس | قسم الحوادث</span>
+                </div>
+
+                <div class="news-item">
+                    <h3>حازم إمام يعلق على أزمة منتخب مصر والكرة المصرية</h3>
+                    <p>أدلى النجم حازم إمام بتصريحات قوية خلال الأسبوع الجاري حول كواليس الكرة المصرية، متحدثاً عن ضرورة الاستقرار الإداري والفني وعدم تفاجؤ اللاعبين بالتغييرات السريعة للحفاظ على مسار المنتخبات الوطنية.</p>
+                    <span class="news-meta">منذ يومين | توك شو رياضي</span>
+                </div>
             </div>
 
-            <div class="news-card">
-                <h3>تأجيل محاكمة المتهمين في قضايا حوادث الأسبوع</h3>
-                <p>تستكمل المحاكم المصرية اليوم جلسات محاكمة عدد من المتهمين في قضايا رأي عام وخلايا إرهابية، وسط إجراءات أمنية مشددة وردود قضائية حاسمة لترسيخ سيادة القانون.</p>
-            </div>
-
-            <div class="news-card">
-                <h3>إمام عاشور يحتفل ويشعل السوشيال ميديا</h3>
-                <p>تصدر اللاعب إمام عاشور محركات البحث بعد مشاركته لجماهيره احتفالاً خاصاً ورومانسياً بميلاد زوجته، وسط تفاعل واسع من رواد مواقع التواصل الاجتماعي.</p>
-            </div>
-
-            <div class="news-card">
-                <h3>تحركات دبلوماسية عربية وإقليمية لضبط أمن الملاحة</h3>
-                <p>تباحثت وزيرة خارجية السعودية والولايات المتحدة الأمريكية في ملفات أمن الملاحة والتطورات الأمنية والسياسية في اليمن ومنطقة الشرق الأوسط لضمان الاستقرار.</p>
+            <div class="section-box">
+                <h2>أخبار عربية وعالمية بارزة</h2>
+                <div class="news-item">
+                    <h3>مباحثات سعودية أمريكية رفيعة المستوى لتعزيز أمن الملاحة</h3>
+                    <p>عقدت وزارة الخارجية في المملكة العربية السعودية والولايات المتحدة لقاءات هامة تناولت سبل تثبيت الاستقرار الإقليمي، وتأمين الملاحة البحرية في المنطقة، والتعامل مع التطورات الأمنية والسياسية في اليمن والشرق الأوسط.</p>
+                    <span class="news-meta">منذ 3 أيام | أخبار العالم</span>
+                </div>
             </div>
         </div>
 
-        <!-- الشريط الجانبي (تفضيلات القراء وأسعار الذهب والأخبار السريعة) -->
-        <div class="sidebar">
-            <h3>تفضيلات القراء وأسعار الذهب</h3>
-            
-            <div class="side-item">
-                <span>أسعار الذهب اليوم</span>
-                تراجع ملحوظ في أسعار الذهب بمصر بقيمة تجاوزت 150 جنيهًا في الجرام، ووصول عيار 24 لمستويات قياسية جديدة وسط ترقب لحركة الأسواق.
+        <!-- الشريط الجانبي (الذهب، التريندات، وتفضيلات القراء) -->
+        <div>
+            <div class="sidebar-box">
+                <h3>أسواق المال والذهب</h3>
+                
+                <div class="gold-box">
+                    <h4>تراجع أسعار الذهب في مصر</h4>
+                    <p>شهد سوق الصاغة المصري خلال الأسبوع الحالي هبوطاً ملحوظاً وتراجعاً تجاوز 150 جنيهًا في قيمة جرام الذهب، وسط ترقب واسع من المستثمرين والمقبلين على الزواج لحركة الشراء والبيع.</p>
+                </div>
+
+                <div class="gold-box" style="background: #e8f5e9; border-color: #a5d6a7;">
+                    <h4 style="color: #2e7d32;">أسعار العملات مقابل الجنيه</h4>
+                    <p>استقرار نسبي في أسعار صرف الدولار والعملات العربية والأجنبية في البنوك المصرية مع ختام تعاملات الأسبوع.</p>
+                </div>
             </div>
 
-            <div class="side-item">
-                <span>أخبار الرياضة والكرة المصرية</span>
-                التصريحات تشتعل بين نجوم التحليل والرياضة، وحازم إمام يعلق على أزمة محمد صلاح وتفاجؤ اللاعبين بالتغييرات الإدارية والفنية الأخيرة.
+            <div class="sidebar-box">
+                <h3>تريندات السوشيال ميديا</h3>
+                <a href="#" class="side-link">🔥 إمام عاشور يشعل السوشيال ميديا باحتفال رومانسي</a>
+                <a href="#" class="side-link">🔥 تفاصيل إقرار الضريبة العقارية ومواعيد التقديم للاستفادة من الإعفاءات</a>
+                <a href="#" class="side-link">🔥 أحدث أخبار الفن والمشاهير والأفلام المنتظرة</a>
+                <a href="#" class="side-link">🔥 نصائح هامة للمستهلكين بخصوص أسعار الدواجن والسلع</a>
             </div>
 
-            <div class="side-item">
-                <span>شعبة المخابز والتموين</span>
-                أنباء عن تحركات وقرارات مرتقبة بشأن منظومة الخبز والأسعار والتموين لضبط الأسواق وحماية المواطن البسيط.
-            </div>
-
-            <div class="side-item">
-                <span>تنبيهات الضرائب العقارية</span>
-                مصلحة الضرائب تذكر المواطنين بمواعيد تقديم إقرار الضريبة العقارية للاستفادة من الإعفاءات المقررة قانوناً وتجنب الغرامات.
+            <div class="sidebar-box">
+                <h3>خدمات للقارئ</h3>
+                <a href="#" class="side-link">📌 مواقيت الصلاة في المحافظات اليوم</a>
+                <a href="#" class="side-link">📌 حالة الطقس ودرجات الحرارة المتوقعة</a>
+                <a href="#" class="side-link">📌 أسعار المحروقات والوقود الرسمية</a>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>جميع الحقوق محفوظة لـ © مجلة ابن البلد 2026 | تصميم وإنتاج خاص للمحتوى المصري</p>
+        <p>جميع الحقوق محفوظة لـ © مجلة ابن البلد 2026 | الموقع مسجل رسمياً على منصات البث الحر ومستوفي لمعايير الجودة</p>
     </footer>
 
 </body>
