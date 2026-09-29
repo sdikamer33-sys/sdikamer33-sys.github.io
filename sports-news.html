@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>القسم الرياضي - مجلة ابن البلد</title>
+    <title>قسم الرياضة - مجلة ابن البلد</title>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1225630225681378" crossorigin="anonymous"></script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23d97706'/><text x='51%' y='62%' dominant-baseline='middle' text-anchor='middle' font-size='50' font-family='Arial, sans-serif' font-weight='bold' fill='%23111827'>عب</text><text x='38%' y='35%' dominant-baseline='middle' text-anchor='middle' font-size='28' font-family='Arial, sans-serif' font-weight='bold' fill='%23111827'>َ</text></svg>">
@@ -25,12 +25,22 @@
         .news-item img { width: 220px; height: 140px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
         @media (max-width: 768px) { .news-item img { width: 100%; height: 200px; } }
         .news-content h3 { font-size: 1.25rem; color: #111827; margin-bottom: 8px; line-height: 1.4; }
-        .news-content h3 a { color: inherit; text-decoration: none; transition: 0.2s; }
+        .news-content h3 a { color: inherit; text-decoration: none; transition: 0.2s; cursor: pointer; }
         .news-content h3 a:hover { color: #e11d48; }
+        .news-content h4.sub-title { font-size: 0.95rem; color: #d97706; margin-bottom: 6px; font-weight: 600; }
         .news-content p { color: #4b5563; font-size: 1rem; margin-bottom: 10px; }
         .news-date { font-size: 0.85rem; color: #9ca3af; }
         .back-btn { display: inline-block; background: #111827; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: 0.3s; }
         .back-btn:hover { background: #e11d48; }
+
+        /* ستايل النافذة المنسقة (Modal) */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; justify-content: center; align-items: center; padding: 20px; }
+        .modal-box { background: #fff; max-width: 700px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 30px; border-radius: 12px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        .modal-close { position: absolute; top: 15px; left: 20px; background: #e11d48; color: #fff; border: none; width: 35px; height: 35px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; font-weight: bold; display: flex; align-items: center; justify-content: center; }
+        .modal-title { color: #111827; font-size: 1.5rem; margin-bottom: 10px; }
+        .modal-subtitle { color: #d97706; font-size: 1.1rem; margin-bottom: 20px; font-weight: bold; }
+        .modal-body { color: #374151; font-size: 1.05rem; line-height: 2; }
+
         footer { background: #111827; color: #9ca3af; text-align: center; padding: 25px 0; margin-top: 40px; border-top: 5px solid #fbbf24; }
         .footer-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; }
         .footer-links a { color: #fbbf24; text-decoration: none; }
@@ -39,7 +49,7 @@
 <body>
     <header>
         <h1>مجلة ابن البلد</h1>
-        <p>نبض الشارع المصري والعربي</p>
+        <p>نبض الشارع المصري والعربي - حصاد الساحرة المستديرة</p>
     </header>
     <nav>
         <a href="index.html">الرئيسية</a>
@@ -50,30 +60,71 @@
         <a href="about.html">من نحن</a>
         <a href="contact.html">اتصل بنا</a>
     </nav>
+    
     <div class="container">
-        <div class="section-header">📁 تغطية خاصة: القسم الرياضي</div>
+        <div class="section-header">⚽ أخبار الرياضة والمباريات الكبرى</div>
         <div class="news-list-box">
+            
+            <!-- الأهلي -->
             <div class="news-item">
-                <img src="https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=800" alt="رياضة">
+                <img src="https://images.pexels.com/photos/1884574/pexels-photo-1884574.jpeg?auto=compress&cs=tinysrgb&w=800" alt="الأهلي">
                 <div class="news-content">
-                    <h3><a href="#">منتخب مصر يكثف تدريباته استعداداً للمواجهة الإفريقية المرتقبة</a></h3>
-                    <p>يخوض الفراعنة مرانهم الختامي وسط تركيز فني كبير على حصد النقاط وتعزيز المسار التصاعدي بالتصفيات القارية...</p>
-                    <span class="news-date">منذ ساعتين | القسم الرياضي</span>
+                    <h3><a onclick="openModal('النادي الأهلي يواصل استعداداته القوية للمواجهات الأفريقية الحاسمة', 'استنفار فني في التتش وجلسات خاصة من الجهاز الفني لتحفيز اللاعبين.', 'يدخل النادي الأهلي مرحلة حاسمة من الاستعدادات المكثفة لمواجهات دوري أبطال أفريقيا، حيث حرص الجهاز الفني على تصحيح أخطاء المباريات الأخيرة والتركيز على رفع معدلات اللياقة البدنية والذهنية للاعبين لضمان استمرار حصد البطولات وإسعاد الجماهير العريضة.')">النادي الأهلي يواصل استعداداته القوية للمواجهات الأفريقية الحاسمة</a></h3>
+                    <h4 class="sub-title">استنفار فني في التتش وجلسات خاصة من الجهاز الفني لتحفيز اللاعبين.</h4>
+                    <p>يدخل النادي الأهلي مرحلة حاسمة من الاستعدادات المكثفة لمواجهات دوري أبطال أفريقيا، وحرص الجهاز الفني على تصحيح الأخطاء ورفع معدلات اللياقة البدنية...</p>
+                    <span class="news-date">منذ ساعة | قسم الرياضة</span>
                 </div>
             </div>
+
+            <!-- برشلونة -->
             <div class="news-item">
-                <img src="https://images.pexels.com/photos/3148452/pexels-photo-3148452.jpeg?auto=compress&cs=tinysrgb&w=800" alt="كرة قدم">
+                <img src="https://images.pexels.com/photos/46798/the-ball-stadion-football-the-pitch-46798.jpeg?auto=compress&cs=tinysrgb&w=800" alt="برشلونة">
                 <div class="news-content">
-                    <h3><a href="#">تعديلات مرتقبة في تشكيل الأندية الكبرى قبل انطلاق الجولة الجديدة</a></h3>
-                    <p>تستعد الأجهزة الفنية لحسم القوائم النهائية وخوض التدريبات التكتيكية لضمان حصد النقاط والتقدم بجدول الترتيب...</p>
-                    <span class="news-date">منذ 5 ساعات | القسم الرياضي</span>
+                    <h3><a onclick="openModal('برشلونة يستعيد بريقه الأوروبي: خطط فليك لتأمين صدارة الدوري الإسباني', 'كتيبة البلوجرانا تقدم مستويات استثنائية وطموحات كبيرة لاستعادة الألقاب.', 'يعيش نادي برشلونة أوقاتاً مذهلة تحت قيادة جيو فليك، حيث نجح الفريق في تقديم أداء هجومي مرعب أثار إعجاب محللي كرة القدم العالمية. تسعى إدارة النادي وجماهيره للحفاظ على هذا الزخم الفني الكبير للمنافسة بقوة على كافة البطولات المحلية والقارية هذا الموسم.')">برشلونة يستعيد بريقه الأوروبي: خطط فليك لتأمين صدارة الدوري الإسباني</a></h3>
+                    <h4 class="sub-title">كتيبة البلوجرانا تقدم مستويات استثنائية وطموحات كبيرة لاستعادة الألقاب.</h4>
+                    <p>يعيش نادي برشلونة أوقاتاً مذهلة تحت قيادة الجهاز الفني، حيث نجح الفريق في تقديم أداء هجومي مرعب أثار إعجاب محللي كرة القدم العالمية والمنافسة بقوة...</p>
+                    <span class="news-date">منذ 3 ساعات | قسم الرياضة</span>
                 </div>
             </div>
+
+            <!-- منتخب مصر -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/365104/pexels-photo-365104.jpeg?auto=compress&cs=tinysrgb&w=800" alt="منتخب مصر">
+                <div class="news-content">
+                    <h3><a onclick="openModal('منتخب مصر يرفع شعار التحدي استعداداً للتصفيات المؤهلة لكأس العالم', 'معسكر مغلق للفراعنة بقيادة النجوم وبحثاً عن انطلاق قوية وثابتة.', 'يبدأ منتخب مصر الأول لكرة القدم معسكراً مغلقاً استعداداً للمواجهات المصيرية في تصفيات كأس العالم وأمم أفريقيا. تسود حالة من التركيز الشديد بين اللاعبين والجهاز الفني لتلبية طموحات الشعب المصري العظيم وتحقيق حلم الصعود المونديالي عن جدارة واستحقاق.')">منتخب مصر يرفع شعار التحدي استعداداً للتصفيات المؤهلة لكأس العالم</a></h3>
+                    <h4 class="sub-title">معسكر مغلق للفراعنة بقيادة النجوم وبحثاً عن انطلاق قوية وثابتة.</h4>
+                    <p>يبدأ منتخب مصر الأول لكرة القدم معسكراً مغلقاً استعداداً للمواجهات المصيرية في تصفيات كأس العالم وأمم أفريقيا وسط تركيز شديد لتلبية طموحات الجماهير...</p>
+                    <span class="news-date">منذ 5 ساعات | قسم الرياضة</span>
+                </div>
+            </div>
+
+            <!-- إشبيلية -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=800" alt="إشبيلية">
+                <div class="news-content">
+                    <h3><a onclick="openModal('نادي إشبيلية يبحث عن العودة لمقاعد الكبار في الدوري الإسباني', 'مساعٍ حثيثة لترتيب الصفوف وإعادة الفريق الأندلسي لمساره الطبيعي.', 'يمر نادي إشبيلية الإسباني بمرحلة إعادة بناء شاملة بعد مواسم متذبذبة في الليجا. وتعمل الإدارة الفنية وجماهير النادي الأندلسي العريق على دعم الفريق للعودة بقوة إلى المربع الذهبي والمنافسة على البطولات الأوروبية المفضلة له.')">نادي إشبيلية يبحث عن العودة لمقاعد الكبار في الدوري الإسباني</a></h3>
+                    <h4 class="sub-title">مساعٍ حثيثة لترتيب الصفوف وإعادة الفريق الأندلسي لمساره الطبيعي.</h4>
+                    <p>يمر نادي إشبيلية الإسباني بمرحلة إعادة بناء شاملة بعد مواسم متذبذبة في الليجا، وتعمل الإدارة والفريق على دعم الصفوف للعودة بقوة إلى المربع الذهبي...</p>
+                    <span class="news-date">منذ 7 ساعات | قسم الرياضة</span>
+                </div>
+            </div>
+
             <div style="text-align: center; margin-top: 30px;">
                 <a href="index.html" class="back-btn">← العودة إلى الصفحة الرئيسية</a>
             </div>
         </div>
     </div>
+
+    <!-- نافذة عرض المقال الكامل (Modal) -->
+    <div id="articleModal" class="modal-overlay" onclick="closeModalOutside(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <h2 id="modalTitle" class="modal-title"></h2>
+            <h4 id="modalSubtitle" class="modal-subtitle"></h4>
+            <div id="modalBody" class="modal-body"></div>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-links">
             <a href="index.html">الرئيسية</a>
@@ -82,5 +133,22 @@
         </div>
         <p>جميع الحقوق محفوظة لـ © مجلة ابن البلد 2026</p>
     </footer>
+
+    <script>
+        function openModal(title, subtitle, body) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalSubtitle').innerText = subtitle;
+            document.getElementById('modalBody').innerText = body;
+            document.getElementById('articleModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('articleModal').style.display = 'none';
+        }
+        function closeModalOutside(event) {
+            if (event.target === document.getElementById('articleModal')) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
