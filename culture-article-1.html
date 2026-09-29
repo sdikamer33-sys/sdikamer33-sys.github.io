@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>انطلاق فعاليات فنية وثقافية تحتفي بالتراث والعراقة المصرية - مجلة ابن البلد</title>
+    <title>قسم المنوعات والثقافة - مجلة ابن البلد</title>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1225630225681378" crossorigin="anonymous"></script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23d97706'/><text x='51%' y='62%' dominant-baseline='middle' text-anchor='middle' font-size='50' font-family='Arial, sans-serif' font-weight='bold' fill='%23111827'>عب</text><text x='38%' y='35%' dominant-baseline='middle' text-anchor='middle' font-size='28' font-family='Arial, sans-serif' font-weight='bold' fill='%23111827'>َ</text></svg>">
@@ -16,16 +16,31 @@
         nav { background: #1f2937; display: flex; justify-content: center; flex-wrap: wrap; padding: 10px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
         nav a { color: #f3f4f6; text-decoration: none; padding: 8px 16px; margin: 3px; font-size: 1rem; border-radius: 6px; font-weight: 600; transition: 0.3s; }
         nav a:hover { background: #e11d48; color: #fff; }
-        .container { max-width: 800px; margin: 40px auto; padding: 0 15px; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); padding-bottom: 40px; }
-        .article-header { padding: 30px 30px 20px 30px; border-bottom: 1px solid #e5e7eb; }
-        .article-category { background: #fee2e2; color: #dc2626; display: inline-block; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem; margin-bottom: 15px; }
-        h2 { color: #111827; font-size: 2.2rem; line-height: 1.4; margin-bottom: 15px; }
-        .article-meta { color: #6b7280; font-size: 0.95rem; margin-bottom: 20px; }
-        .article-img { width: 100%; height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 25px; }
-        .article-content { padding: 0 30px; font-size: 1.15rem; color: #374151; }
-        .article-content p { margin-bottom: 20px; text-align: justify; }
-        .back-btn { display: inline-block; background: #111827; color: #fff; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; margin: 30px 30px 0 30px; transition: 0.3s; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 15px; }
+        .section-header { background: #111827; color: #fbbf24; padding: 15px 20px; border-radius: 8px 8px 0 0; font-size: 1.5rem; border-right: 6px solid #e11d48; }
+        .news-list-box { background: #fff; padding: 25px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 40px; }
+        .news-item { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid #e5e7eb; align-items: center; }
+        .news-item:last-child { border-bottom: none; }
+        @media (max-width: 768px) { .news-item { flex-direction: column; align-items: flex-start; } }
+        .news-item img { width: 220px; height: 140px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
+        @media (max-width: 768px) { .news-item img { width: 100%; height: 200px; } }
+        .news-content h3 { font-size: 1.25rem; color: #111827; margin-bottom: 8px; line-height: 1.4; }
+        .news-content h3 a { color: inherit; text-decoration: none; transition: 0.2s; cursor: pointer; }
+        .news-content h3 a:hover { color: #e11d48; }
+        .news-content h4.sub-title { font-size: 0.95rem; color: #d97706; margin-bottom: 6px; font-weight: 600; }
+        .news-content p { color: #4b5563; font-size: 1rem; margin-bottom: 10px; }
+        .news-date { font-size: 0.85rem; color: #9ca3af; }
+        .back-btn { display: inline-block; background: #111827; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: 0.3s; }
         .back-btn:hover { background: #e11d48; }
+
+        /* ستايل النافذة المنسقة (Modal) لقراءة المقال كامل */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; justify-content: center; align-items: center; padding: 20px; }
+        .modal-box { background: #fff; max-width: 700px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 30px; border-radius: 12px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        .modal-close { position: absolute; top: 15px; left: 20px; background: #e11d48; color: #fff; border: none; width: 35px; height: 35px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; font-weight: bold; display: flex; align-items: center; justify-content: center; }
+        .modal-title { color: #111827; font-size: 1.5rem; margin-bottom: 10px; }
+        .modal-subtitle { color: #d97706; font-size: 1.1rem; margin-bottom: 20px; font-weight: bold; }
+        .modal-body { color: #374151; font-size: 1.05rem; line-height: 2; }
+
         footer { background: #111827; color: #9ca3af; text-align: center; padding: 25px 0; margin-top: 40px; border-top: 5px solid #fbbf24; }
         .footer-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; }
         .footer-links a { color: #fbbf24; text-decoration: none; }
@@ -45,24 +60,136 @@
         <a href="about.html">من نحن</a>
         <a href="contact.html">اتصل بنا</a>
     </nav>
+    
     <div class="container">
-        <div class="article-header">
-            <span class="article-category">قسم المنوعات</span>
-            <h2>انطلاق فعاليات فنية وثقافية تحتفي بالتراث والعراقة المصرية</h2>
-            <div class="article-meta">منذ 3 ساعات | بواسطة تحرير مجلة ابن البلد</div>
-        </div>
-        
-        <div style="padding: 0 30px;">
-            <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1000&q=80" alt="فعاليات فنية" class="article-img">
-        </div>
+        <div class="section-header">🌟 واحة المنوعات والثقافة والقصص التراثية</div>
+        <div class="news-list-box">
+            
+            <!-- المقال الأول -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=800" alt="ثقافة">
+                <div class="news-content">
+                    <h3><a onclick="openModal('1. عادات تقاليد رمضانية ومصرية أصيلة تختفي وتظهر مع مرور الزمن', 'رحلة عبر الزمن في حارة المصريين وذكريات الجدات واللمة الطيبة.', 'تزخر الثقافة المصرية بالعديد من العادات والتقاليد المتأصلة في وجدان الشعب على مر العصور، بدءاً من طقوس الأعياد والمواسم وحتى تفاصيل الحياة اليومية في الحارات الشعبية العريقة. ورغم التطور التكنولوجي وسرعة العصر الحديث، إلا أن النكهة المصرية الأصيلة تظل قادرة على البقاء والصمود في قلوب الأجيال.')">1. عادات تقاليد رمضانية ومصرية أصيلة تختفي وتظهر مع مرور الزمن</a></h3>
+                    <h4 class="sub-title">رحلة عبر الزمن في حارة المصريين وذكريات الجدات واللمة الطيبة.</h4>
+                    <p>تزخر الثقافة المصرية بالعديد من العادات والتقاليد المتأصلة في وجدان الشعب على مر العصور، بدءاً من طقوس الأعياد وحتى تفاصيل الحياة اليومية بالحارات العريقة...</p>
+                    <span class="news-date">منذ ساعة | قسم المنوعات</span>
+                </div>
+            </div>
 
-        <div class="article-content">
-            <p>شهدت الليلة الماضية انطلاق فعاليات فنية وثقافية ضخمة تحتفي بالتراث المصري العريق والفنون الشعبية الأصيلة، وسط حضور جماهيري واسع وتفاعل مميز من مختلف الفئات العمرية التي حرصت على متابعة العروض الفنية المتنوعة.</p>
-            <p>تضمنت الفعاليات عروضاً استعراضية مستوحاة من التراث الشعبي لمختلف المحافظات المصرية، إلى جانب تكريم رموز الإبداع والفنون والثقافة ممن أسهموا في إثراء الحركة الفنية والحفاظ على الهوية التراثية للأجيال القادمة.</p>
-            <p>وأكد القائمون على الحدث أن هذه الفعاليات تأتي ضمن خطة شاملة لدعم الثقافة والفنون وإبراز الوجه الحضاري والتاريخي لمصر، مع إتاحة الفرصة للفرق الشبابية المستقلة لتقديم مواهبهم وعروضهم أمام جمهور عريض.</p>
-        </div>
+            <!-- المقال الثاني -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=800" alt="تكنولوجيا">
+                <div class="news-content">
+                    <h3><a onclick="openModal('2. الذكاء الاصطناعي يقتحم حياتنا اليومية: كيف تغيرت مهن المستقبل للأبد؟', 'فرص وتحديات جديدة تفرضها الثورة الرقمية على سوق العمل والشباب.', 'لم يعد الذكاء الاصطناعي مجرد خيال علمي في الأفلام، بل أصبح واقعاً يفرض نفسه بقوة في كل مجالات الحياة، بدءاً من الدراسة والبرمجة وحتى إدارة الأعمال وصناعة المحتوى الرقمي، مما يتطلب من الشباب مواكبة هذه التغيرات السريعة لضمان مكانهم في السوق.')">2. الذكاء الاصطناعي يقتحم حياتنا اليومية: كيف تغيرت مهن المستقبل للأبد؟</a></h3>
+                    <h4 class="sub-title">فرص وتحديات جديدة تفرضها الثورة الرقمية على سوق العمل والشباب.</h4>
+                    <p>لم يعد الذكاء الاصطناعي مجرد خيال علمي، بل أصبح واقعاً يفرض نفسه بقوة في مجالات الحياة، مما يتطلب من الشباب مواكبة التغيرات السريعة لضمان مكانهم بالمستقبل...</p>
+                    <span class="news-date">منذ ساعتين | قسم المنوعات</span>
+                </div>
+            </div>
 
-        <a href="index.html" class="back-btn">← العودة إلى الرئيسية</a>
+            <!-- المقال الثالث -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=800" alt="أكلات مصرية">
+                <div class="news-content">
+                    <h3><a onclick="openModal('3. أسرار المطبخ المصري: أكلات شعبيّة تراثية تنافس أشهر الأطباق العالمية', 'الكشري، الحواوشي، والملوخية.. سحر البساطة وطعم التاريخ الحقيقي.', 'يتربع المطبخ المصري على عرش المطابخ العربية والعالمية بما يقدمه من أطباق غنية بالنكهات والتاريخ. وتعتبر الأكلات الشعبية مثل الكشري والفول والطعمية رموزاً ثقافية يعشقها الملايين داخل مصر وخارجها، لما تحملُه من دفء ومذاق فريد لا يُضاهى.')">3. أسرار المطبخ المصري: أكلات شعبيّة تراثية تنافس أشهر الأطباق العالمية</a></h3>
+                    <h4 class="sub-title">الكشري، الحواوشي، والملوخية.. سحر البساطة وطعم التاريخ الحقيقي.</h4>
+                    <p>يتربع المطبخ المصري على عرش المطابخ بفضل أطباقه الغنية بالنكهات والتاريخ، وتعتبر الأكلات الشعبية رموزاً ثقافية يعشقها الملايين لما تحملُه من دفء ومذاق فريد...</p>
+                    <span class="news-date">منذ 3 ساعات | قسم المنوعات</span>
+                </div>
+            </div>
+
+            <!-- المقال الرابع -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/1144275/pexels-photo-1144275.jpeg?auto=compress&cs=tinysrgb&w=800" alt="سياحة">
+                <div class="news-content">
+                    <h3><a onclick="openModal('4. دليلك السحري لأجمل الأماكن السياحية في مصر غير الخاضعة للزحام التقليدي', 'من سيوة إلى دهب وأسوان.. رحلة استكشافية للطبيعة الساحرة والهدوء.', 'تحتضن أرض مصر كنوزاً طبيعية وسياحية مذهلة بعيداً عن الوجهات المعتادة. إذا كنت تبحث عن الاسترخاء والهدوء وسط المناظر الخلابة والطبيعة البكر، فإن واحة سيوة وجبال دهب وشواطئ مرسى علم تنتظرك لتأخذك في رحلة لا تُنسى.')">4. دليلك السحري لأجمل الأماكن السياحية في مصر غير الخاضعة للزحام التقليدي</a></h3>
+                    <h4 class="sub-title">من سيوة إلى دهب وأسوان.. رحلة استكشافية للطبيعة الساحرة والهدوء.</h4>
+                    <p>تحتضن أرض مصر كنوزاً طبيعية وسياحية مذهلة بعيداً عن الوجهات المعتادة، فإذا كنت تبحث عن الهدوء وسط الطبيعة البكر، فإن سيوة ودهب ومرسى علم تنتظرك...</p>
+                    <span class="news-date">منذ 4 ساعات | قسم المنوعات</span>
+                </div>
+            </div>
+
+            <!-- المقال الخامس -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg?auto=compress&cs=tinysrgb&w=800" alt="صحة ولياقة">
+                <div class="news-content">
+                    <h3><a onclick="openModal('5. نصائح ذهبية لصحة أفضل: كيف تحمي نفسك من إجهاد الشاشات والعمل الطويل؟', 'طرق بسيطة للحفاظ على التركيز والنظر والصحة العامة وسط ضغوط الحياة.', 'في ظل الاعتماد المتزايد على الحواسيب والهواتف الذكية في العمل والدراسة، يعاني الكثيرون من إجهاد العين وآلام الرقبة. يوصي الأطباء بضرورة اتباع قاعدة الـ 20-20-20 وممارسة الرياضة الخفيفة بانتظام لاستعادة النشاط والحيوية.')">5. نصائح ذهبية لصحة أفضل: كيف تحمي نفسك من إجهاد الشاشات والعمل الطويل؟</a></h3>
+                    <h4 class="sub-title">طرق بسيطة للحفاظ على التركيز والنظر والصحة العامة وسط ضغوط الحياة.</h4>
+                    <p>في ظل الاعتماد المتزايد على الشاشات والهواتف بالعمل والدراسة، يعاني الكثيرون من الإجهاد؛ لذا يوصي الأطباء بقواعد بسيطة وممارسة الرياضة لاستعادة الحيوية...</p>
+                    <span class="news-date">منذ 5 ساعات | قسم المنوعات</span>
+                </div>
+            </div>
+
+            <!-- المقال السادس -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/1051075/pexels-photo-1051075.jpeg?auto=compress&cs=tinysrgb&w=800" alt="تصوير وقراءة">
+                <div class="news-content">
+                    <h3><a onclick="openModal('6. فوائد القراءة اليومية: كيف تغير عادة قراءة 15 دقيقة تفكيرك وحياتك؟', 'استثمار صغير للوقت يصنع فارقاً هائلاً في الوعي والمعرفة والثقافة الشخصية.', 'تعتبر القراءة غذاء الروح والعقل، والدليل الأقوى على تقدم الأمم وثقافتها. وتشير الدراسات الحديثة إلى أن تخصيص 15 دقيقة فقط يومياً لقراءة كتاب مفيد يعزز الذاكرة، ويقلل مستويات التوتر، ويوسع مدارك الفرد بطريقة مذهلة.')">6. فوائد القراءة اليومية: كيف تغير عادة قراءة 15 دقيقة تفكيرك وحياتك؟</a></h3>
+                    <h4 class="sub-title">استثمار صغير للوقت يصنع فارقاً هائلاً في الوعي والمعرفة والثقافة الشخصية.</h4>
+                    <p>تعتبر القراءة غذاء الروح والعقل، وتشير الدراسات الحديثة إلى أن تخصيص 15 دقيقة فقط يومياً لقراءة كتاب مفيد يعزز الذاكرة ويقلل مستويات التوتر بشكل مذهل...</p>
+                    <span class="news-date">منذ 6 ساعات | قسم المنوعات</span>
+                </div>
+            </div>
+
+            <!-- المقال السابع -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800" alt="موسيقى وفنون">
+                <div class="news-content">
+                    <h3><a onclick="openModal('7. رحلة في تاريخ الفن المصري: رموز الخالدين من العصر الذهبي للموسيقى والسينما', 'أساطير الطرب والتمثيل الذين تركوا بصمة خالدة لا تُنسى في الوجدان العربي.', 'يمتلك الفن المصري رصيداً تاريخياً ضخماً جعل منه منارة ثقافية في الشرق الأوسط. من أم كلثوم وعبد الحليم حافظ إلى نجوم السينما الكلاسيكية، ظلت أعمالهم تحتفظ ببريقها وسحرها الخاص الذي تتناقله الأجيال بكل حب وفخر.')">7. رحلة في تاريخ الفن المصري: رموز الخالدين من العصر الذهبي للموسيقى والسينما</a></h3>
+                    <h4 class="sub-title">أساطير الطرب والتمثيل الذين تركوا بصمة خالدة لا تُنسى في الوجدان العربي.</h4>
+                    <p>يمتلك الفن المصري رصيداً تاريخياً ضخماً جعل منه منارة ثقافية في الشرق الأوسط، وظلت أعمال عمالقة الطرب والتمثيل تحتفظ ببريقها وسحرها عبر الأجيال...</p>
+                    <span class="news-date">منذ 7 ساعات | قسم المنوعات</span>
+                </div>
+            </div>
+
+            <!-- المقال الثامن -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/3184311/pexels-photo-3184311.jpeg?auto=compress&cs=tinysrgb&w=800" alt="تطوير الذات">
+                <div class="news-content">
+                    <h3><a onclick="openModal('8. فن إدارة الوقت وإنجاز المهام: كيف تنجز أضعاف عملك في وقت قياسي؟', 'استراتيجيات عملية مجربة للتخلص من التسويف ومضاعفة الإنتاجية الشخصية.', 'يواجه الكثير من الشباب تحدي ضيق الوقت وكثرة المهام اليومية، مما يسبب شعوراً دائماً بالإرهاق. باتباع تقنيات تنظيم الوقت الحديثة مثل تقنية البومودورو وترتيب الأولويات بحسب الأهمية، يمكنك تحقيق إنجازات هائلة بكل سهولة.')">8. فن إدارة الوقت وإنجاز المهام: كيف تنجز أضعاف عملك في وقت قياسي؟</a></h3>
+                    <h4 class="sub-title">استراتيجيات عملية مجربة للتخلص من التسويف ومضاعفة الإنتاجية الشخصية.</h4>
+                    <p>يواجه الكثير من الشباب تحدي ضيق الوقت وكثرة المهام، وباتباع تقنيات تنظيم الوقت الحديثة مثل البومودورو وترتيب الأولويات، يمكنك تحقيق إنجازات هائلة بكل سهولة...</p>
+                    <span class="news-date">منذ 8 ساعات | قسم المنوعات</span>
+                </div>
+            </div>
+
+            <!-- المقال التاسع -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/1043471/pexels-photo-1043471.jpeg?auto=compress&cs=tinysrgb&w=800" alt="عالم الحيوان والطبيعة">
+                <div class="news-content">
+                    <h3><a onclick="openModal('9. أغرب الظواهر الطبيعية حول العالم: عجائب لا تصدق تخفيها كوكب الأرض', 'من الشواطئ المضيئة ليلاً إلى الغابات الساحرة.. أسرار مذهلة تستحق الإبهار.', 'تزعم الطبيعة كوكب الأرض بالعديد من الأسرار والظواهر الخلابة التي تعجز العقول عن تفسيرها بسهولة. من البحيرات الوردية إلى الأضواء الشمالية المبهرة، تأخذنا الطبيعة في جولة ساحرة تثبت عظمة الخالق وروعة هذا الكون الواسع.')">9. أغرب الظواهر الطبيعية حول العالم: عجائب لا تصدق تخفيها كوكب الأرض</a></h3>
+                    <h4 class="sub-title">من الشواطئ المضيئة ليلاً إلى الغابات الساحرة.. أسرار مذهلة تستحق الإبهار.</h4>
+                    <p>تزخر كوكب الأرض بالعديد من الأسرار والظواهر الخلابة التي تعجز العقول عن تفسيرها بسهولة، من البحيرات الملونة إلى الأضواء الشمالية المبهرة...</p>
+                    <span class="news-date">منذ 9 ساعات | قسم المنوعات</span>
+                </div>
+            </div>
+
+            <!-- المقال العاشر -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/3747468/pexels-photo-3747468.jpeg?auto=compress&cs=tinysrgb&w=800" alt="طاقة إيجابية">
+                <div class="news-content">
+                    <h3><a onclick="openModal('10. قوة التفاؤل والتفكير الإيجابي: كيف تبرمج عقلك لجذب النجاح والراحة النفسية؟', 'خطوات بسيطة وفعالة لبناء عقلية مرنة قادرة على مواجهة أصعب التحديات.', 'التفكير الإيجابي ليس مجرد شعارات رنانة، بل هو أسلوب حياة وعلم يغير كيمياء الدماغ ويزيد من الإنتاجية والسعادة الداخلية. تدريب عقلك على رؤية الفرص وسط الأزمات هو مفتاح العبور نحو مستقبل أشمل وأكثر استقراراً وتوازناً.')">10. قوة التفاؤل والتفكير الإيجابي: كيف تبرمج عقلك لجذب النجاح والراحة النفسية؟</a></h3>
+                    <h4 class="sub-title">خطوات بسيطة وفعالة لبناء عقلية مرنة قادرة على مواجهة أصعب التحديات.</h4>
+                    <p>التفكير الإيجابي ليس مجرد شعارات، بل هو أسلوب حياة يغير كيمياء الدماغ ويزيد السعادة الداخلية، وتدريب عقلك على رؤية الفرص وسط الأزمات هو مفتاح النجاح...</p>
+                    <span class="news-date">منذ 10 ساعات | قسم المنوعات</span>
+                </div>
+            </div>
+
+            <!-- أزرار إضافية أو العودة -->
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="index.html" class="back-btn">← العودة إلى الصفحة الرئيسية</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- نافذة عرض المقال الكامل (Modal) -->
+    <div id="articleModal" class="modal-overlay" onclick="closeModalOutside(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <h2 id="modalTitle" class="modal-title"></h2>
+            <h4 id="modalSubtitle" class="modal-subtitle"></h4>
+            <div id="modalBody" class="modal-body"></div>
+        </div>
     </div>
 
     <footer>
@@ -73,5 +200,22 @@
         </div>
         <p>جميع الحقوق محفوظة لـ © مجلة ابن البلد 2026</p>
     </footer>
+
+    <script>
+        function openModal(title, subtitle, body) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalSubtitle').innerText = subtitle;
+            document.getElementById('modalBody').innerText = body;
+            document.getElementById('articleModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('articleModal').style.display = 'none';
+        }
+        function closeModalOutside(event) {
+            if (event.target === document.getElementById('articleModal')) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
