@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تريندات السوشيال ميديا وأبرز الموضوعات - مجلة ابن البلد</title>
+    <title>التريندات والأخبار الرائجة - مجلة ابن البلد</title>
     
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1225630225681378" crossorigin="anonymous"></script>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='50' fill='%23d97706'/><text x='51%' y='62%' dominant-baseline='middle' text-anchor='middle' font-size='50' font-family='Arial, sans-serif' font-weight='bold' fill='%23111827'>عب</text><text x='38%' y='35%' dominant-baseline='middle' text-anchor='middle' font-size='28' font-family='Arial, sans-serif' font-weight='bold' fill='%23111827'>َ</text></svg>">
@@ -16,13 +16,31 @@
         nav { background: #1f2937; display: flex; justify-content: center; flex-wrap: wrap; padding: 10px; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
         nav a { color: #f3f4f6; text-decoration: none; padding: 8px 16px; margin: 3px; font-size: 1rem; border-radius: 6px; font-weight: 600; transition: 0.3s; }
         nav a:hover { background: #e11d48; color: #fff; }
-        .container { max-width: 900px; margin: 40px auto; padding: 0 15px; }
-        .trend-card { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 30px; border-top: 5px solid #e11d48; }
-        h2 { color: #111827; margin-bottom: 15px; font-size: 1.6rem; }
-        .trend-tag { background: #fee2e2; color: #dc2626; display: inline-block; padding: 3px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85rem; margin-bottom: 10px; }
-        p { color: #4b5563; font-size: 1.1rem; margin-bottom: 15px; text-align: justify; }
-        .back-btn { display: inline-block; background: #111827; color: #fff; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 20px; transition: 0.3s; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 15px; }
+        .section-header { background: #111827; color: #fbbf24; padding: 15px 20px; border-radius: 8px 8px 0 0; font-size: 1.5rem; border-right: 6px solid #e11d48; }
+        .news-list-box { background: #fff; padding: 25px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 40px; }
+        .news-item { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid #e5e7eb; align-items: center; }
+        .news-item:last-child { border-bottom: none; }
+        @media (max-width: 768px) { .news-item { flex-direction: column; align-items: flex-start; } }
+        .news-item img { width: 220px; height: 140px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
+        @media (max-width: 768px) { .news-item img { width: 100%; height: 200px; } }
+        .news-content h3 { font-size: 1.25rem; color: #111827; margin-bottom: 8px; line-height: 1.4; }
+        .news-content h3 a { color: inherit; text-decoration: none; transition: 0.2s; cursor: pointer; }
+        .news-content h3 a:hover { color: #e11d48; }
+        .news-content h4.sub-title { font-size: 0.95rem; color: #d97706; margin-bottom: 6px; font-weight: 600; }
+        .news-content p { color: #4b5563; font-size: 1rem; margin-bottom: 10px; }
+        .news-date { font-size: 0.85rem; color: #9ca3af; }
+        .back-btn { display: inline-block; background: #111827; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: 0.3s; }
         .back-btn:hover { background: #e11d48; }
+
+        /* ستايل النافذة المنسقة (Modal) */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; justify-content: center; align-items: center; padding: 20px; }
+        .modal-box { background: #fff; max-width: 700px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 30px; border-radius: 12px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        .modal-close { position: absolute; top: 15px; left: 20px; background: #e11d48; color: #fff; border: none; width: 35px; height: 35px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; font-weight: bold; display: flex; align-items: center; justify-content: center; }
+        .modal-title { color: #111827; font-size: 1.5rem; margin-bottom: 10px; }
+        .modal-subtitle { color: #d97706; font-size: 1.1rem; margin-bottom: 20px; font-weight: bold; }
+        .modal-body { color: #374151; font-size: 1.05rem; line-height: 2; }
+
         footer { background: #111827; color: #9ca3af; text-align: center; padding: 25px 0; margin-top: 40px; border-top: 5px solid #fbbf24; }
         .footer-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; }
         .footer-links a { color: #fbbf24; text-decoration: none; }
@@ -31,7 +49,7 @@
 <body>
     <header>
         <h1>مجلة ابن البلد</h1>
-        <p>نبض الشارع المصري والعربي</p>
+        <p>التريندات والأخبار الأكثر بحثاً واهتماماً على السوشيال ميديا</p>
     </header>
     <nav>
         <a href="index.html">الرئيسية</a>
@@ -42,31 +60,60 @@
         <a href="about.html">من نحن</a>
         <a href="contact.html">اتصل بنا</a>
     </nav>
+    
     <div class="container">
-        
-        <div class="trend-card">
-            <span class="trend-tag">🔥 تريند الاقتصاد</span>
-            <h2>تفاصيل الإقرار الضريبي ومواعيد التقديم الرسمية</h2>
-            <p>تزايد البحث عبر محركات البحث ومنصات التواصل الاجتماعي حول مواعيد تقديم الإقرارات الضريبية للعام الحالي والمستندات المطلوبة للتمتع بالتيسيرات المتاحة للممولين وأصحاب الأعمال الحرة والشركات، وسط اهتمام واسع من الجهات المختصة لتوضيح الخطوات إلكترونياً.</p>
-        </div>
+        <div class="section-header">🔥 الأخبار الأكثر بحثاً والتريندات الرائجة</div>
+        <div class="news-list-box">
+            
+            <!-- تريند 1 -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/5082579/pexels-photo-5082579.jpeg?auto=compress&cs=tinysrgb&w=800" alt="تريند السوشيال ميديا">
+                <div class="news-content">
+                    <h3><a onclick="openModal('ما هي القضايا والأخبار التي تشعل مواقع التواصل الاجتماعي اليوم؟', 'قراءة تحليلية لأبرز الهاشتاجات والاهتمامات المتصدرة لمحركات البحث.', 'تشهد منصات التواصل الاجتماعي تفاعلات واسعة النطاق حول عدة موضوعات تشغل الرأي العام، حيث تتصدر التريندات قضايا متنوعة تتراوح بين الفن والرياضة والمواقف الإنسانية الملهمة التي يتداولها الملايين عبر الإنترنت بحثاً عن التفاصيل والقصص الحقيقية خلفها.')">ما هي القضايا والأخبار التي تشعل مواقع التواصل الاجتماعي اليوم؟</a></h3>
+                    <h4 class="sub-title">قراءة تحليلية لأبرز الهاشتاجات والاهتمامات المتصدرة لمحركات البحث.</h4>
+                    <p>تشهد منصات التواصل الاجتماعي تفاعلات واسعة النطاق حول عدة موضوعات تشغل الرأي العام، حيث تتصدر التريندات قضايا متنوعة تتراوح بين الفن والرياضة والمواقف...</p>
+                    <span class="news-date">منذ ساعة | قسم التريندات</span>
+                </div>
+            </div>
 
-        <div class="trend-card">
-            <span class="trend-tag">🔥 تريند الفن</span>
-            <h2>كواليس وأخبار النجوم والمهرجانات الفنية الكبرى</h2>
-            <p>تتابع جماهير السوشيال ميديا باهتمام بالغ أحدث أخبار الوسط الفني وكواليس تصوير الأعمال الدرامية الجديدة واللقاءات الحصرية لأبرز نجوم السينما والدراما، بالإضافة إلى الاستعدادات الخاصة بالمهرجانات السينمائية القادمة.</p>
-        </div>
+            <!-- تريند 2 -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=800" alt="تريند البحث">
+                <div class="news-content">
+                    <h3><a onclick="openModal('كيف تصنع محتوى رقمياً يتصدر التريند ويجذب ملايين المشاهدات؟', 'أسرار السيو (SEO) وخوارزميات منصات التواصل الاجتماعي لصانعي المحتوى.', 'مع التطور الهائل في عالم صناعة المحتوى الرقمي، يبحث الكثير من المبدعين عن الطرق الفعالة لجذب الجمهور وتحقيق انتشار واسع. تلعب الكلمات الافتتاحية، والعناوين الجذابة، والتوقيت المناسب للنشر دوراً محورياً في تصدر محركات البحث ومنصات السوشيال ميديا.')">كيف تصنع محتوى رقمياً يتصدر التريند ويجذب ملايين المشاهدات؟</a></h3>
+                    <h4 class="sub-title">أسرار السيو (SEO) وخوارزميات منصات التواصل الاجتماعي لصانعي المحتوى.</h4>
+                    <p>مع التطور الهائل في عالم صناعة المحتوى الرقمي، يبحث الكثير من المبدعين عن الطرق الفعالة لجذب الجمهور، وتلعب العناوين الجذابة والتوقيت دوراً محورياً...</p>
+                    <span class="news-date">منذ 3 ساعات | قسم التريندات</span>
+                </div>
+            </div>
 
-        <div class="trend-card">
-            <span class="trend-tag">🔥 تريند الطقس</span>
-            <h2>حالة الطقس وتوقعات الأيام القادمة بالجمهورية</h2>
-            <p>تشهد محركات البحث تساؤلات مكثفة حول تقلبات الأحوال الجوية ودرجات الحرارة المتوقعة خلال الأسبوع الجاري، حيث تحرص هيئة الأرصاد الجوية على توجيه التحذيرات والارشادات اللازمة للمواطنين وسائقي المركبات على الطرق السريعة.</p>
-        </div>
+            <!-- تريند 3 -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/1591056/pexels-photo-1591056.jpeg?auto=compress&cs=tinysrgb&w=800" alt="قصص مؤثرة">
+                <div class="news-content">
+                    <h3><a onclick="openModal('قصص إنسانية ألهمت ملايين المتابعين على الإنترنت هذا الأسبوع', 'مواقف مؤثرة تبرز أسمى معاني الشهامة والوفاء في الشارع العربي.', 'لم تخلو منصات السوشيال ميديا من القصص الإنسانية التي هزت القلوب وفتحت باب النقاش حول القيم النبيلة. مواقف بسيطة لأشخاص عاديين صنعوا الفارق وأثبتوا أن الخير ما زال متأصلاً في نفوس أبناء الوطن والشارع العربي.')">قصص إنسانية ألهمت ملايين المتابعين على الإنترنت هذا الأسبوع</a></h3>
+                    <h4 class="sub-title">مواقف مؤثرة تبرز أسمى معاني الشهامة والوفاء في الشارع العربي.</h4>
+                    <p>لم تخلو منصات السوشيال ميديا من القصص الإنسانية التي هزت القلوب وفتحت باب النقاش حول القيم النبيلة، وأشخاص عاديين صنعوا الفارق وأثبتوا أن الخير متأصل...</p>
+                    <span class="news-date">منذ 5 ساعات | قسم التريندات</span>
+                </div>
+            </div>
 
-        <div style="text-align: center;">
-            <a href="index.html" class="back-btn">← العودة إلى الصفحة الرئيسية</a>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="index.html" class="back-btn">← العودة إلى الصفحة الرئيسية</a>
+            </div>
         </div>
-
     </div>
+
+    <!-- نافذة عرض المقال الكامل (Modal) -->
+    <div id="articleModal" class="modal-overlay" onclick="closeModalOutside(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <h2 id="modalTitle" class="modal-title"></h2>
+            <h4 id="modalSubtitle" class="modal-subtitle"></h4>
+            <div id="modalBody" class="modal-body"></div>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-links">
             <a href="index.html">الرئيسية</a>
@@ -75,5 +122,22 @@
         </div>
         <p>جميع الحقوق محفوظة لـ © مجلة ابن البلد 2026</p>
     </footer>
+
+    <script>
+        function openModal(title, subtitle, body) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalSubtitle').innerText = subtitle;
+            document.getElementById('modalBody').innerText = body;
+            document.getElementById('articleModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('articleModal').style.display = 'none';
+        }
+        function closeModalOutside(event) {
+            if (event.target === document.getElementById('articleModal')) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
