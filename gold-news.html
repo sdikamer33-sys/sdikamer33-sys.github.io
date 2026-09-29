@@ -25,13 +25,22 @@
         .news-item img { width: 220px; height: 140px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
         @media (max-width: 768px) { .news-item img { width: 100%; height: 200px; } }
         .news-content h3 { font-size: 1.25rem; color: #111827; margin-bottom: 8px; line-height: 1.4; }
-        .news-content h3 a { color: inherit; text-decoration: none; transition: 0.2s; }
+        .news-content h3 a { color: inherit; text-decoration: none; transition: 0.2s; cursor: pointer; }
         .news-content h3 a:hover { color: #e11d48; }
         .news-content h4.sub-title { font-size: 0.95rem; color: #d97706; margin-bottom: 6px; font-weight: 600; }
         .news-content p { color: #4b5563; font-size: 1rem; margin-bottom: 10px; }
         .news-date { font-size: 0.85rem; color: #9ca3af; }
         .back-btn { display: inline-block; background: #111827; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: 0.3s; }
         .back-btn:hover { background: #e11d48; }
+
+        /* ستايل النافذة المنسقة (Modal) لقراءة المقال كامل */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 2000; justify-content: center; align-items: center; padding: 20px; }
+        .modal-box { background: #fff; max-width: 700px; width: 100%; max-height: 85vh; overflow-y: auto; padding: 30px; border-radius: 12px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        .modal-close { position: absolute; top: 15px; left: 20px; background: #e11d48; color: #fff; border: none; width: 35px; height: 35px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; font-weight: bold; display: flex; align-items: center; justify-content: center; }
+        .modal-title { color: #111827; font-size: 1.5rem; margin-bottom: 10px; }
+        .modal-subtitle { color: #d97706; font-size: 1.1rem; margin-bottom: 20px; font-weight: bold; }
+        .modal-body { color: #374151; font-size: 1.05rem; line-height: 2; }
+
         footer { background: #111827; color: #9ca3af; text-align: center; padding: 25px 0; margin-top: 40px; border-top: 5px solid #fbbf24; }
         .footer-links { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; }
         .footer-links a { color: #fbbf24; text-decoration: none; }
@@ -60,7 +69,7 @@
             <div class="news-item">
                 <img src="https://images.pexels.com/photos/4709824/pexels-photo-4709824.jpeg?auto=compress&cs=tinysrgb&w=800" alt="ذهب">
                 <div class="news-content">
-                    <h3><a href="#">1. أسعار الذهب اليوم في مصر: عيار 21 يسجل رقماً جديداً وسط إقبال كبير على الشراء</a></h3>
+                    <h3><a onclick="openModal('1. أسعار الذهب اليوم في مصر: عيار 21 يسجل رقماً جديداً وسط إقبال كبير على الشراء', 'هل الوقت مناسب للشراء أم للبيع؟ خبير اقتصادي يوضح التوقعات المقبلة.', 'شهدت أسعار الذهب في السوق المحلي اليوم تحركات جديدة، حيث حافظ عيار 21 -الأكثر مبيعاً في مصر- على مستويات معينة وسط ترقب من المستثمرين والمقبلين على الزواج. وفي هذا السياق، أكد خبراء الصاغة أن الذهب يظل الملاذ الآمن الأول لحفظ البناء المالي للأسر المصرية، داعين إلى ضرورة متابعة حركة السوق لحظة بلحظة قبل اتخاذ قرار البيع أو الشراء. وأضاف الخبراء أن الاستثمار في المعدن الأصفر على المدى المتوسط والطويل يثبت دائماً قدرته على حماية المدخرات من التضخم.')">1. أسعار الذهب اليوم في مصر: عيار 21 يسجل رقماً جديداً وسط إقبال كبير على الشراء</a></h3>
                     <h4 class="sub-title">هل الوقت مناسب للشراء أم للبيع؟ خبير اقتصادي يوضح التوقعات المقبلة.</h4>
                     <p>شهدت أسعار الذهب في السوق المحلي اليوم تحركات جديدة، حيث حافظ عيار 21 -الأكثر مبيعاً في مصر- على مستويات معينة وسط ترقب من المستثمرين والمقبلين على الزواج...</p>
                     <span class="news-date">منذ ساعة | قسم الاقتصاد</span>
@@ -71,7 +80,7 @@
             <div class="news-item">
                 <img src="https://images.pexels.com/photos/259200/pexels-photo-259200.jpeg?auto=compress&cs=tinysrgb&w=800" alt="بورصة">
                 <div class="news-content">
-                    <h3><a href="#">2. هل يتحول الذهب إلى العملة الصعبة البديلة؟.. دراسة تكشف أسرار إقبال المصريين على السبائك</a></h3>
+                    <h3><a onclick="openModal('2. هل يتحول الذهب إلى العملة الصعبة البديلة؟.. دراسة تكشف أسرار إقبال المصريين على السبائك', 'السبائك والجنيهات الذهب تكتسح المشهد مقارنة بالمشغولات التقليدية.', 'في ظل التغيرات الاقتصادية العالمية، باتت السبائك والجنيهات الذهب الخيار المفضّل للمواطنين الراغبين في الاستثمار الآمن بعيداً عن مصنعية المشغولات العالية. وأظهرت مؤشرات سوق الصاغة خلال الفترة الأخيرة ارتفاعاً ملحوظاً في حجم مبيعات السبائك بمختلف أوزانها، باعتبارها وسيلة ذكية لحفظ القيمة بأقل خسارة ممكنة عند إعادة البيع، مما يجعلها البديل المفضل للكثيرين.')">2. هل يتحول الذهب إلى العملة الصعبة البديلة؟.. دراسة تكشف أسرار إقبال المصريين على السبائك</a></h3>
                     <h4 class="sub-title">السبائك والجنيهات الذهب تكتسح المشهد مقارنة بالمشغولات التقليدية.</h4>
                     <p>في ظل التغيرات الاقتصادية العالمية، باتت السبائك والجنيهات الذهب الخيار المفضّل للمواطنين الراغبين في الاستثمار الآمن بعيداً عن مصنعية المشغولات العالية...</p>
                     <span class="news-date">منذ ساعتين | قسم الاقتصاد</span>
@@ -82,7 +91,7 @@
             <div class="news-item">
                 <img src="https://images.pexels.com/photos/3943716/pexels-photo-3943716.jpeg?auto=compress&cs=tinysrgb&w=800" alt="نصائح الذهب">
                 <div class="news-content">
-                    <h3><a href="#">3. نصائح ذهبية قبل الشراء: كيف تفرق بين الذهب الأصلي والمغشوش في السوق؟</a></h3>
+                    <h3><a onclick="openModal('3. نصائح ذهبية قبل الشراء: كيف تفرق بين الذهب الأصلي والمغشوش في السوق؟', 'علامات وأختام أساسية يجب التأكد منها لضمان حقوقك تماماً.', 'مع رواج تجارة الذهب وزيادة الإقبال عليه، يلجأ البعض أحياناً لطرق غير مرغوبة للغش التجاري. لضمان سلامة أموالك، ينصح خبراء الدمغة والموازين بعدم الشراء إلا من محلات معتمدة وموثوقة، مع ضرورة التأكد من وجود الدمغة الرسمية والختم الواضح، والحصول على فاتورة ضريبية تفصيلية تثبت الوزن والعيار والمسلسل.')">3. نصائح ذهبية قبل الشراء: كيف تفرق بين الذهب الأصلي والمغشوش في السوق؟</a></h3>
                     <h4 class="sub-title">علامات وأختام أساسية يجب التأكد منها لضمان حقوقك تماماً.</h4>
                     <p>مع رواج تجارة الذهب وزيادة الإقبال عليه، يلجأ البعض أحياناً لطرق غير مرغوبة للغش التجاري. لضمان سلامة أموالك، ينصح خبراء الدمغة والموازين بعدم الشراء إلا من محلات معتمدة...</p>
                     <span class="news-date">منذ 3 ساعات | قسم الاقتصاد</span>
@@ -93,7 +102,7 @@
             <div class="news-item">
                 <img src="https://images.pexels.com/photos/6801874/pexels-photo-6801874.jpeg?auto=compress&cs=tinysrgb&w=800" alt="أسعار الفائدة">
                 <div class="news-content">
-                    <h3><a href="#">4. تأثير أسعار الفائدة والبورصات العالمية على سعر الذهب محلياً في مصر</a></h3>
+                    <h3><a onclick="openModal('4. تأثير أسعار الفائدة والبورصات العالمية على سعر الذهب محلياً في مصر', 'العلاقة العكسية بين الدولار والذهب والدور الحاسم للأسواق العالمية.', 'لا يقف سعر الذهب في مصر بمعزل عن البورصات العالمية وحركة سعر الأوقية بالدولار، فعندما ترتفع التوترات الجيوسياسية أو تتغير قرارات الفيدرالي الأمريكي بشأن أسعار الفائدة، ينعكس ذلك مباشرةً على أسعار الذهب محلياً، مما يجعله محط أنظار المستثمرين باستمرار لمتابعة حركة السوق.')">4. تأثير أسعار الفائدة والبورصات العالمية على سعر الذهب محلياً في مصر</a></h3>
                     <h4 class="sub-title">العلاقة العكسية بين الدولار والذهب والدور الحاسم للأسواق العالمية.</h4>
                     <p>لا يقف سعر الذهب في مصر بمعزل عن البورصات العالمية وحركة سعر الأوقية بالدولار، فعندما ترتفع التوترات الجيوسياسية أو تتغير قرارات الفيدرالي، ينعكس ذلك مباشرةً...</p>
                     <span class="news-date">منذ 4 ساعات | قسم الاقتصاد</span>
@@ -104,7 +113,7 @@
             <div class="news-item">
                 <img src="https://images.pexels.com/photos/4386431/pexels-photo-4386431.jpeg?auto=compress&cs=tinysrgb&w=800" alt="استثمار الذهب">
                 <div class="news-content">
-                    <h3><a href="#">5. هل الذهب أفضل أم العقارات والشهادات البنكية؟.. مقارنة شاملة للمستثمر الصغير</a></h3>
+                    <h3><a onclick="openModal('5. هل الذهب أفضل أم العقارات والشهادات البنكية؟.. مقارنة شاملة للمستثمر الصغير', 'مميزات وعيوب كل وعاء ادخار وكيف تختار الأنسب لمستقبلك.', 'يقع الكثير من الشباب في حيرة اختيار المجال الأنسب لاستثمار أموالهم، بينما تتميز الشهادات بعوائد ثابتة ويحتاج العقار لرؤوس أموال ضخمة، يتربع الذهب على عرش الاستثمار المرن الذي يمكنك من تحويله إلى كاش في أي لحظة وبدون عناء، مما يجعله الخيار الأفضل للمدخرات الصغيرة.')">5. هل الذهب أفضل أم العقارات والشهادات البنكية؟.. مقارنة شاملة للمستثمر الصغير</a></h3>
                     <h4 class="sub-title">مميزات وعيوب كل وعاء ادخار وكيف تختار الأنسب لمستقبلك.</h4>
                     <p>يقع الكثير من الشباب في حيرة اختيار المجال الأنسب لاستثمار أموالهم، بينما تتميز الشهادات بعوائد ثابتة، يتربع الذهب على عرش الاستثمار المرن للتحويل إلى كاش...</p>
                     <span class="news-date">منذ 5 ساعات | قسم الاقتصاد</span>
@@ -117,6 +126,16 @@
         </div>
     </div>
 
+    <!-- نافذة عرض المقال الكامل (Modal) -->
+    <div id="articleModal" class="modal-overlay" onclick="closeModalOutside(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">×</button>
+            <h2 id="modalTitle" class="modal-title"></h2>
+            <h4 id="modalSubtitle" class="modal-subtitle"></h4>
+            <div id="modalBody" class="modal-body"></div>
+        </div>
+    </div>
+
     <footer>
         <div class="footer-links">
             <a href="index.html">الرئيسية</a>
@@ -125,5 +144,22 @@
         </div>
         <p>جميع الحقوق محفوظة لـ © مجلة ابن البلد 2026</p>
     </footer>
+
+    <script>
+        function openModal(title, subtitle, body) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalSubtitle').innerText = subtitle;
+            document.getElementById('modalBody').innerText = body;
+            document.getElementById('articleModal').style.display = 'flex';
+        }
+        function closeModal() {
+            document.getElementById('articleModal').style.display = 'none';
+        }
+        function closeModalOutside(event) {
+            if (event.target === document.getElementById('articleModal')) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
