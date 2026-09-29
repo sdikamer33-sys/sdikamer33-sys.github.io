@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>قبضة أمنية حاسمة تسقط شبكات الإتجار بالمواد المخدرة - مجلة ابن البلد</title>
+    <title>قسم الحوادث والأمن - مجلة ابن البلد</title>
     
     <!-- كود إثبات ملكية Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1225630225681378" crossorigin="anonymous"></script>
@@ -21,21 +21,28 @@
         nav a { color: #f3f4f6; text-decoration: none; padding: 8px 16px; margin: 3px; font-size: 1rem; border-radius: 6px; font-weight: 600; transition: 0.3s; }
         nav a:hover { background: #e11d48; color: #fff; }
 
-        .article-container { max-width: 850px; margin: 40px auto; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border-top: 4px solid #e11d48; }
+        .container { max-width: 1000px; margin: 40px auto; padding: 0 15px; }
         
-        .article-category { background: #fee2e2; color: #dc2626; display: inline-block; padding: 4px 12px; border-radius: 4px; font-weight: bold; font-size: 0.9rem; margin-bottom: 15px; }
+        /* صندوق القسم الرئيسي */
+        .section-header { background: #111827; color: #fbbf24; padding: 15px 20px; border-radius: 8px 8px 0 0; font-size: 1.5rem; border-right: 6px solid #e11d48; }
         
-        h2 { color: #111827; margin-bottom: 20px; font-size: 2rem; line-height: 1.4; }
-        
-        .article-meta { color: #9ca3af; font-size: 0.9rem; margin-bottom: 25px; border-bottom: 1px solid #e5e7eb; padding-bottom: 15px; }
-        
-        .article-img { width: 100%; height: 400px; object-fit: cover; border-radius: 8px; margin-bottom: 25px; }
-        
-        p { color: #374151; margin-bottom: 20px; font-size: 1.15rem; text-align: justify; }
-        
-        h3 { color: #111827; margin: 30px 0 15px 0; font-size: 1.4rem; border-right: 5px solid #dc2626; padding-right: 12px; }
-        
-        .back-btn { display: inline-block; background: #111827; color: #fff; padding: 12px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 30px; transition: 0.3s; }
+        .news-list-box { background: #fff; padding: 25px; border-radius: 0 0 12px 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); margin-bottom: 40px; }
+
+        /* تصميم الخبر الفردي داخل القائمة */
+        .news-item { display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid #e5e7eb; align-items: center; }
+        .news-item:last-child { border-bottom: none; }
+        @media (max-width: 768px) { .news-item { flex-direction: column; align-items: flex-start; } }
+
+        .news-item img { width: 220px; height: 140px; object-fit: cover; border-radius: 8px; flex-shrink: 0; }
+        @media (max-width: 768px) { .news-item img { width: 100%; height: 200px; } }
+
+        .news-content h3 { font-size: 1.25rem; color: #111827; margin-bottom: 8px; line-height: 1.4; }
+        .news-content h3 a { color: inherit; text-decoration: none; transition: 0.2s; }
+        .news-content h3 a:hover { color: #e11d48; }
+        .news-content p { color: #4b5563; font-size: 1rem; margin-bottom: 10px; }
+        .news-date { font-size: 0.85rem; color: #9ca3af; }
+
+        .back-btn { display: inline-block; background: #111827; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: 0.3s; }
         .back-btn:hover { background: #e11d48; }
 
         footer { background: #111827; color: #9ca3af; text-align: center; padding: 25px 0; margin-top: 40px; border-top: 5px solid #fbbf24; }
@@ -60,23 +67,45 @@
         <a href="contact.html">اتصل بنا</a>
     </nav>
 
-    <div class="article-container">
-        <span class="article-category">قسم الحوادث والأمن</span>
-        <h2>قبضة أمنية حاسمة تسقط شبكات الإتجار بالمواد المخدرة والأسلحة غير المرخصة بعدة محافظات</h2>
-        <div class="article-meta">كتبه: قسم التحرير والمتابعة | تاريخ النشر: سبتمبر 2026</div>
+    <div class="container">
+        <div class="section-header">📁 تغطية خاصة: قسم الحوادث والأمن</div>
+        <div class="news-list-box">
 
-        <img src="https://images.pexels.com/photos/7988081/pexels-photo-7988081.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="شرطة وأمن" class="article-img">
+            <!-- الخبر الأول (أحدث خبر) -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/7988081/pexels-photo-7988081.jpeg?auto=compress&cs=tinysrgb&w=800" alt="حوادث">
+                <div class="news-content">
+                    <h3><a href="#">قبضة أمنية حاسمة تسقط شبكات الإتجار بالمواد المخدرة بعدة محافظات</a></h3>
+                    <p>وجه قطاع الأمن العام حملات مكبرة أسفرت عن ضبط تشكيلات عصابية وبؤر إجرامية تخصصت في جلب وترويج المخدرات والأسلحة النارية...</p>
+                    <span class="news-date">منذ ساعتين | قسم الحوادث</span>
+                </div>
+            </div>
 
-        <p>في إطار جهود أجهزة وزارة الداخلية المستمرة لمكافحة الجريمة بشتى صورها، ولا سيما ضبط حائزي وتجار المواد المخدرة والأسلحة النارية غير المرخصة، وجه قطاع الأمن العام بمشاركة مديريات الأمن حملات أمنية مكبرة أسفرت عن تحقيق نتائج قوية وحاسمة بالشارع المصري.</p>
+            <!-- الخبر الثاني (لو حبيت تضيف خبر جديد، انسخ الكوبيه دي وحطها تحت دي) -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/4709824/pexels-photo-4709824.jpeg?auto=compress&cs=tinysrgb&w=800" alt="أمن">
+                <div class="news-content">
+                    <h3><a href="#">السيطرة على حريق محدود داخل مخزن تجاري دون خسائر بشرية</a></h3>
+                    <p>تمكنت قوات الحماية المدنية من اخحام حريق نشب داخل مخزن بشارع الرئيسي، وتم إتمام عمليات التبريد بنجاح دون تسجيل أي إصابات...</p>
+                    <span class="news-date">منذ 5 ساعات | قسم الحوادث</span>
+                </div>
+            </div>
 
-        <p>وقد تمكنت الأجهزة الأمنية بعد استيفاء الإجراءات القانونية من ضبط عدة تشكيلات عصابية وبؤر إجرامية تخصصت في جلب وترويج المخدرات بمختلف أنواعها، فضلاً عن إحكام الرقابة وضبط الخارجين عن القانون في عدد واسع من المحافظات المصرية، لحماية المواطنين وتطهير البؤر الإجرامية.</p>
+            <!-- الخبر الثالث -->
+            <div class="news-item">
+                <img src="https://images.pexels.com/photos/2774556/pexels-photo-2774556.jpeg?auto=compress&cs=tinysrgb&w=800" alt="مرور">
+                <div class="news-content">
+                    <h3><a href="#">الإدارة العامة للمرور تشن حملات لضبط المسرعين على الطرق السريعة</a></h3>
+                    <p>كثفت الإدارة تواجدها الراداري والحملات الأمنية لضبط المخالفات المرورية وحماية ارواح المواطنين على المحاور الرئيسية...</p>
+                    <span class="news-date">امس | قسم الحوادث</span>
+                </div>
+            </div>
 
-        <h3>ضربات استباقية وحماية للمجتمع</h3>
-        <p>أسفرت الحملات الأمنية الموسعة عن ضبط كميات كبيرة من المواد المخدرة المتنوعة (مثل الهيروين، الحشيش، الشابو، وخطوط توزيع الأقراص المخدرة)، بالإضافة إلى ضبط عدد من الأسلحة النارية والذخائر غير المرخصة بحوزة المتهمين، والذين اعترفوا بحيازتهم للمضبوطات بقصد الإتجار وترويجها على عملائهم لتحقيق أرباح غير مشروعة.</p>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="index.html" class="back-btn">← العودة إلى الصفحة الرئيسية</a>
+            </div>
 
-        <p>تم اتخاذ الإجراءات القانونية اللازمة حيال كل واقعة على حدة، وتولت النيابة العامة مباشرة التحقيقات مع المتهمين لكشف ملابسات نشاطهم الإجرامي وامتداداتهم، وسط إشادة واسعة من المواطنين بيقظة رجال الشرطة وحرصهم الدائم على حفظ الأمن والأمان بالشارع المصري واستقرار الوطن.</p>
-
-        <a href="index.html" class="back-btn">← العودة إلى الصفحة الرئيسية</a>
+        </div>
     </div>
 
     <footer>
